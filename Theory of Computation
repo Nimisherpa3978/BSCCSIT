@@ -1,0 +1,160 @@
+Theory of Computation syllabus for B.Sc. CSIT – 4th Semester (TU):
+
+
+🎯 Theory of Computation – Table of Contents (TU, BSc CSIT 4th Sem)
+
+--------------------------------------------------------------------------------------------------------------
+
+✅ Unit I: Basic Foundations (3 hours)
+
+Core Goal: Build your mathematical brain for ToC.
+
+✔ Set Theory, Logic, Functions (be quick & clear)
+
+✔ Types of proofs: Direct, Contradiction, Induction
+
+✔ Know: What are Automata, Computability, and Complexity theories?
+
+✔ Understand alphabets, strings, ε, languages, closures (* and +)
+
+📌 Must master for board: Language basics, formal definitions, and examples.
+------------------------------------------------------------------------------------------------------------
+
+✅ Unit II: Finite Automata (FA) (8 hours)
+
+Core Goal: Think like a machine. Understand how input is accepted.
+
+✔ DFA (Deterministic Finite Automata): design, transition tables
+
+✔ NFA: differences from DFA, drawing and simulating
+
+✔ ε-NFA: epsilon transitions, epsilon-closure
+
+✔ Convert: NFA → DFA; ε-NFA → DFA
+
+✔ Moore vs Mealy Machines (outputs)
+
+📌 Must master for board: Draw FA for languages; conversions; design problems.
+------------------------------------------------------------------------------------------------------------
+
+✅ Unit III: Regular Expressions & Languages (6 hours)
+
+Core Goal: Learn to describe languages algebraically.
+
+✔ Operators: Union, Concatenation, Kleene star
+
+✔ Convert: FA ↔ Regular Expression
+
+✔ Arden’s Theorem (for solving equations)
+
+✔ Pumping Lemma (to prove a language is not regular)
+
+✔ FSM Minimization (table filling algorithm)
+
+✔ Closure properties (Union, Intersection, Complement)
+
+📌 Must master for board: Conversions, RE designs, pumping lemma proof.
+------------------------------------------------------------------------------------------------------------
+
+✅ Unit IV: Context-Free Grammar (CFG) (9 hours)
+
+Core Goal: Design grammars for more complex patterns.
+
+✔ Grammar structure: variables, terminals, start symbol, productions
+
+✔ Derivations: leftmost/rightmost
+
+✔ Parse Trees and Ambiguity
+
+✔ CFG ↔ FA conversions (Regular Grammar)
+
+✔ Simplification: remove null, unit, useless productions
+
+✔ Chomsky & Greibach Normal Forms
+
+✔ Pumping Lemma for CFLs, Closure Properties
+
+✔ BNF notation
+
+✔ Chomsky Hierarchy (Type 0 to Type 3)
+
+📌 Must master for board: CFG design, ambiguity, simplification, CNF conversion.
+------------------------------------------------------------------------------------------------------------
+
+✅ Unit V: Pushdown Automata (PDA) (7 hours)
+
+Core Goal: Go beyond FA — use stack memory.
+
+✔ PDA definition and transition diagram
+
+✔ Instantaneous Descriptions
+
+✔ Acceptance: by empty stack vs final state
+
+✔ Convert: CFG ↔ PDA
+
+📌 Must master for board: Design PDA for simple CFLs, CFG ↔ PDA conversion.
+------------------------------------------------------------------------------------------------------------
+
+✅ Unit VI: Turing Machines (TM) (10 hours)
+
+Core Goal: Learn the most powerful model — a theoretical computer.
+
+✔ TM basics: tape, head, state, transition function
+
+✔ Language recognition & computation
+
+✔ Instantaneous Description (ID)
+
+✔ TM variants: multi-tape, nondeterministic, semi-infinite, subroutines
+
+✔ Universal Turing Machine
+
+✔ TM encoding (Gödel numbering, etc.)
+
+✔ Church-Turing Thesis
+
+📌 Must master for board: Design simple TMs, explain computation, compare TM types.
+------------------------------------------------------------------------------------------------------------
+
+✅ Unit VII: Undecidability & Complexity (5 hours)
+
+Core Goal: Understand limits of computation.
+
+✔ Time and Space Complexity (for TMs)
+
+✔ Decision vs Optimization problems
+
+✔ Reduction & Undecidability (Post’s, Halting Problem)
+
+✔ Cook’s Theorem (basic idea)
+
+✔ Recognize NP, NP-Complete, Intractable problems
+
+📌 Must master for board: Halting problem proof, problem classification, definitions.
+------------------------------------------------------------------------------------------------------------
+
+🔁 1. Understand, don’t memorize
+
+Build logic — ToC is about "can a machine do this?" not just definitions.
+
+✏️ 2. Draw machines regularly
+
+DFA, NFA, PDA, and TMs are all visual — practice drawing them fast and clean.
+
+
+🧩 4. Master conversions
+
+Regular Expressions ↔ FA
+
+CFG ↔ PDA
+
+FA Minimization
+
+ε-NFA → DFA
+
+CFG → CNF
+
+💬 5. Teach a topic to someone else
+
+If you can explain Pumping Lemma or PDA design clearly, you truly understand it.
