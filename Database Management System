@@ -1,0 +1,109 @@
+DBMS – B.Sc. CSIT 4th Semester – Simplified Unit-wise Syllabus
+--------------------------------------------------------------------------------------------------------------------------
+Unit I: Introduction to DBMS
+
+Definition and key advantages of DBMS
+
+Roles: database users and admins
+
+Database system architecture: three‑schema architecture and data independence
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit II: Data Modeling (ER Model)
+
+ER diagram basics: entities, relationships, attributes, keys
+
+Extending models: weak entities, inheritance, specialization/generalization
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit III: Relational Model & Constraints
+
+Relational schema, tuples, relations, and integrity constraints
+
+Update operations and handling constraint violations
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit IV: Relational Algebra & Calculus
+
+Basic operators: SELECT, PROJECT, UNION, JOIN, DIVISION, etc.
+
+Tuple relational calculus and domain relational calculus
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit V: SQL
+
+DDL and DML: defining structures, data types, and constraints
+
+Queries: SELECT (simple & complex), INSERT, UPDATE, DELETE
+
+Views and advanced retrieval techniques
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit VI: Relational Database Design
+
+Mapping ER-to-relational schemas
+
+Functional dependencies and normalization:
+
+1NF, 2NF, 3NF
+
+BCNF, 4NF, relational decomposition properties
+
+--------------------------------------------------------------------------------------------------------------------------
+Unit VII: Transaction Processing
+
+Core concepts of transactions
+
+ACID properties: Atomicity, Consistency, Isolation, Durability
+
+Schedule recoverability and serializability
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit VIII: Concurrency Control
+
+Techniques for maintaining consistency in multi-user environments:
+
+Two-phase locking
+
+Timestamp ordering
+
+Multiversion concurrency control
+
+Optimistic validation and snapshot isolation
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit IX: Database Recovery Techniques
+
+Methods to recover from failures:
+
+Deferred update (No‑Undo/Redo)
+
+Immediate update (Undo/Redo)
+
+Shadow paging
+
+Backup and restoration strategies for catastrophic failure
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Overview Table – Unit at a Glance
+--------------------------------------------------------------------------------------------------------------------------
+Unit	Core Topics
+--------------------------------------------------------------------------------------------------------------------------
+I	DBMS fundamentals & architecture
+II	ER modeling & data representation
+III	Relational schemas & integrity constraints
+IV	Relational algebra & logic-based querying
+V	SQL—creation, manipulation, and querying
+VI	Schema design & normalization processes
+VII	Transaction theory & ACID properties
+VIII	Concurrency control mechanisms
+IX	Recovery techniques & backup strategies
+--------------------------------------------------------------------------------------------------------------------------
