@@ -1,0 +1,80 @@
+Operating Systems – BSc CSIT 4th Semester (Unit‑wise Simplified Syllabus)
+--------------------------------------------------------------------------------------------------------
+Unit I: Operating System Overview (4 Hours)
+
+What is an OS? Core functionalities and viewpoints
+
+Evolution and types of OS
+
+System calls and system programs
+
+OS structures: Monolithic, Layered, Microkernel
+
+The shell and open-source operating systems
+--------------------------------------------------------------------------------------------------------
+
+Unit II: Process Management (10 Hours)
+
+Distinguish between process and program; understand multiprogramming
+
+Process life cycle: states, Process Control Block (PCB)
+
+Threads: types, use, user vs kernel threads
+
+Inter-Process Communication (IPC) and synchronization
+
+Implementing mutual exclusion: from busy waiting to semaphores and monitors
+
+Classic synchronization problems: Producer–Consumer, Sleeping Barber, Dining Philosophers
+
+Scheduling algorithms: FCFS, SJF, Round Robin, Priority, Multi-Queue, Real-Time scheduling
+--------------------------------------------------------------------------------------------------------
+
+Unit III: Process Deadlocks (6 Hours)
+
+Define deadlock; necessary conditions (RAG model)
+
+Deadlock handling strategies: Ostrich approach, prevention, avoidance, detection, and recovery
+--------------------------------------------------------------------------------------------------------
+
+Unit IV: Memory Management (8 Hours)
+
+Memory models: monoprogramming vs multiprogramming; relocation and protection
+
+Allocation methods: fixed and variable partitions, bitmaps, linked lists
+
+Virtual memory and paging; TLBs; page fault handling
+
+Page replacement algorithms: FIFO, LRU, Optimal, LFU, Clock, WS‑Clock; Locality of Reference; Belady’s Anomaly
+
+Segmentation, including segmentation with paging (e.g., MULTICS)
+--------------------------------------------------------------------------------------------------------
+
+Unit V: File Management (6 Hours)
+
+File system fundamentals: naming, types, attributes, operations, directory structures
+
+File system layouts and directory systems (single-level, two-level, hierarchical)
+
+Allocation strategies: Contiguous, Linked, Indexed, and Inode-based methods
+--------------------------------------------------------------------------------------------------------
+
+Unit VI: Device Management (6 Hours)
+
+(Note: While not always detailed in summaries, this unit typically covers the control and handling of devices—assume core concepts covered in standard curricula.)
+--------------------------------------------------------------------------------------------------------
+
+Unit VII: Linux Case Study (5 Hours)
+
+Real-world exploration of Linux operating system architecture and system management practices
+--------------------------------------------------------------------------------------------------------
+
+Pro-Level Summary Table
+Unit	Core Focus
+I	OS fundamentals & structure
+II	Process lifecycle, scheduling, IPC
+III	Deadlock theory & resolution
+IV	Memory allocation & paging
+V	File systems and allocation methods
+VI	Device management essentials
+VII	Linux OS architecture & insights
