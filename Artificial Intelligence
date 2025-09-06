@@ -1,0 +1,161 @@
+Artificial Intelligence – BSc CSIT 4th Semester – Simplified Unit-wise Syllabus
+
+(Note: All unit details are based on the official curriculum and affiliated sources.)
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit I: Introduction
+
+Understand the concept of Intelligence vs Artificial Intelligence
+
+Explore AI Perspectives:
+
+Acting humanly
+
+Thinking humanly
+
+Acting rationally
+
+Thinking rationally
+
+Review the History of AI
+
+Grasp the Foundations of AI through diverse disciplines:
+
+Philosophy, Economics, Psychology, Sociology, Linguistics, Neuroscience, Mathematics, Computer Science, Control Theory
+
+Discover Applications of AI
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Unit II: Intelligent Agents
+
+Learn about agents and their structures & properties
+
+Master the PEAS model (Performance measure, Environment, Actuators, Sensors) and agent configuration
+
+Identify agent types:
+
+Simple reflex, Model-based, Goal-based, Utility-based, Learning agents
+
+Study environment classifications:
+
+Deterministic vs Stochastic
+
+Static vs Dynamic
+
+Observable vs Partially Observable
+
+Single-agent vs Multi-agent
+
+--------------------------------------------------------------------------------------------------------------------------
+Unit III: Problem Solving by Searching
+
+Formulate problems using state space, states, and well-defined problem parameters
+
+Compare search strategies, evaluating:
+
+Time and space complexity
+
+Completeness, optimality
+
+Explore Uninformed Search:
+
+DFS, BFS, Depth-limited, Iterative Deepening, Uniform Cost, Bidirectional Search
+
+Dive into Informed Search:
+
+Heuristics, Admissible Heuristics
+
+Greedy Best-First, A*, Hill Climbing, Simulated Annealing
+
+Understand Game-playing via:
+
+Minimax, Alpha-Beta Pruning
+
+Get introduced to Constraint Satisfaction Problems (CSPs)
+
+--------------------------------------------------------------------------------------------------------------------------
+Unit IV: Knowledge Representation
+
+Define knowledge and explore knowledge representation systems and their key properties
+
+Learn representation schemes:
+
+Semantic networks, Frames, Conceptual dependencies, Scripts, Rule-based systems
+
+Dive into Propositional Logic:
+
+Syntax, semantics, connectives, truth tables, tautology, validity
+
+Inference methods: Resolution, Forward & Backward Chaining
+
+Master First-order Predicate Logic (FOPL):
+
+Quantification, syntax, semantics, inference using unification & resolution
+
+Explore Uncertain Knowledge:
+
+Random variables, Bayes’ theorem, Bayesian networks
+
+Understand Fuzzy Logic:
+
+Fuzzy sets, membership functions, rule-based systems
+
+--------------------------------------------------------------------------------------------------------------------------
+Unit V: Machine Learning
+
+Grasp learning paradigms: Supervised, Unsupervised, Reinforcement Learning
+
+Study Statistical Learning: Naive Bayes model
+
+Learn Genetic Algorithms: Selection, Crossover, Mutation, Fitness functions
+
+Explore Neural Networks:
+
+Biological vs Artificial, Activation functions (Linear, Step, Sigmoid)
+
+Network types: Feed-forward, Recurrent, Single-layer, Multi-layer
+
+Training methods: Perceptron learning, Backpropagation, Hebbian learning
+
+--------------------------------------------------------------------------------------------------------------------------
+Unit VI: Applications of AI
+
+Expert Systems:
+
+Architecture: Knowledge base, Inference engine, User interface, Working memory
+
+Development process
+
+Natural Language Processing (NLP):
+
+NLU (Understanding) vs NLG (Generation)
+
+NLP pipeline: Lexical, Syntactic, Semantic, Pragmatic analysis
+
+Machine translation fundamentals
+
+Machine Vision:
+
+Concepts, components, and real-world applications
+
+Robotics:
+
+Robot hardware components (sensors, effectors)
+
+Perception mechanisms in robotics
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Overview Table – At a Glance
+--------------------------------------------------------------------------------------------------------------------------
+Unit	Core Focus
+--------------------------------------------------------------------------------------------------------------------------
+I	AI fundamentals, history, & interdisciplinary roots
+II	Intelligent agents and environment modeling
+III	Problem-solving via search strategies
+IV	Knowledge representation & logical inference
+V	Machine learning paradigms and neural networks
+VI	Practical AI applications: Expert Systems, NLP, Vision, Robotics
+--------------------------------------------------------------------------------------------------------------------------
