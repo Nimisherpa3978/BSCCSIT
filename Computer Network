@@ -1,0 +1,104 @@
+Computer Networks – BSc CSIT 4th Semester – Simplified Unit-wise Syllabus
+-----------------------------------------------------------------------------------------------------------------
+Unit I: Introduction to Computer Network (6 Hours)
+
+Fundamentals: definitions, advantages, use cases
+
+Network topologies (Star, Tree, Bus, Mesh, etc.)
+
+Network types: PAN, LAN, CAN, MAN, WAN
+
+Communication models: Client–Server, Peer-to-Peer (P2P)
+
+Protocols vs Standards (syntax, semantics, timing; de jure vs de facto; standards bodies)
+
+OSI Model overview vs TCP/IP Model, plus their comparison
+
+Connection‑oriented vs connectionless services
+
+Overview: Internet structure, ISPs, backbone networks
+
+-----------------------------------------------------------------------------------------------------------------
+
+Unit II: Physical Layer & Network Media (4 Hours)
+
+Network devices: repeater, hub, switch, bridge, router
+
+Transmission media:
+
+Wired: twisted pair, coaxial, fiber optic
+
+Wireless: radio waves, microwaves, infrared
+
+Ethernet cabling standards (UTP, fiber optics)
+
+Switching methods: circuit switching, message switching, packet switching
+
+ISDN overview: interfaces and standards
+
+-----------------------------------------------------------------------------------------------------------------
+
+Unit III: Data Link Layer (8 Hours)
+
+Functions of the Data Link Layer (DLL)
+
+Logical Link Control (LLC) vs Media Access Control (MAC)
+
+Framing and flow control mechanisms
+
+-----------------------------------------------------------------------------------------------------------------
+
+Unit IV: Network Layer (10 Hours)
+
+(Although not detailed in earlier search, standard content implies focus on IP addressing, routing,
+  and related protocols—based on course objectives)
+
+IPv4 and IPv6 addressing and subnetting
+
+Routing fundamentals: static vs dynamic, interior/exterior routing (e.g., RIP, OSPF, BGP)
+
+Core functions of routers and network layer protocols
+
+-----------------------------------------------------------------------------------------------------------------
+Unit V: Transport Layer (6 Hours)
+
+Basic transport layer concepts: functions, protocols, reliability, flow control, error control
+
+Common protocols like TCP vs UDP (implied by standard structure)
+
+-----------------------------------------------------------------------------------------------------------------
+
+Unit VI: Application Layer (7 Hours)
+
+High-level protocols and services: HTTP, FTP, SMTP, DNS, etc.
+
+Basics of multimedia networking and streaming protocols
+
+-----------------------------------------------------------------------------------------------------------------
+
+Unit VII: Multimedia & Future Networking (4 Hours)
+
+Multimedia networking concepts
+
+Emerging and future networking technologies (e.g., IoT, 5G, SDN, etc.)
+
+-----------------------------------------------------------------------------------------------------------------
+
+At‑a‑Glance Overview
+Unit	Topics Covered
+I	Intro to networks, topologies, OSI/TCP models
+II	Physical layer: devices & media types
+III	Data Link Layer: framing, MAC, LLC
+IV	Network Layer: routing & addressing
+V	Transport Layer: protocols like TCP/UDP
+VI	Application Layer: key services & protocols
+VII	Multimedia & upcoming networking trends
+Tips to Nail the Board Exam (As a Pro)
+
+Draw visuals: OSI/TCP models, frame formats, and media types.
+
+Memorize fundamentals: Topology names, protocol layers, device functions.
+
+Apply examples: IPv4 vs IPv6, sample subnetting, typical use cases.
+
+Stay current: Know at least one emerging tech (e.g., SDN, IoT) for extra edge.
