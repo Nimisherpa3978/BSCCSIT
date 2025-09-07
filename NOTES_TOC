@@ -1,0 +1,909 @@
+------------------------------------------------------------------------------
+UNIT 1
+------------------------------------------------------------------------------
+1. Automata Theory
+
+Studies abstract machines (like DFAs, NFAs, PDAs, TMs)
+
+Understands how machines recognize languages
+
+2. Computability Theory
+
+Asks: What can be computed at all?
+
+Focuses on Turing Machines
+
+Shows limits of computation (e.g., Halting Problem)
+
+3. Complexity Theory
+
+Asks: How efficiently can a problem be solved?
+
+Looks at time and space complexity
+
+Involves P vs NP, big-O notation, etc.
+
+🔹 PART 4: LANGUAGE BUILDING BLOCKS (💯 Must Master for Boards)
+Alphabet (Σ)
+
+A finite set of symbols
+e.g., Σ = {0, 1}
+
+String
+
+A finite sequence of symbols from Σ
+e.g., 0101 is a string over Σ = {0,1}
+
+ε (epsilon)
+
+The empty string (no symbols)
+
+Length = 0
+
+Important in transitions and definitions
+
+Language
+
+A set of strings over an alphabet
+e.g., L = {0, 01, 011}
+
+Can be finite or infinite
+
+Closures
+
+Kleene Star (Σ*): All strings (incl. ε)
+e.g., if Σ = {a}, then Σ* = {ε, a, aa, aaa, ...}
+
+Kleene Plus (Σ⁺): All non-empty strings
+e.g., Σ⁺ = {a, aa, aaa, ...}
+
+🔍 Summary Mnemonic:
+
+“Alphabets make strings; strings make languages.”
+And then we use machines to recognize or process those l
+
+------------------------------------------------------------------------------
+UNIT 2
+------------------------------------------------------------------------------
+✅ UNIT II: FINITE AUTOMATA (Core Goal: Think like a machine)
+
+Machines in FA don’t “understand” — they just follow transitions based on input symbols.
+Your job is to:
+
+Design such machines
+
+Simulate how they move
+
+Convert between types
+
+And analyze what languages they accept
+
+
+
+
+🔹 1. DFA: Deterministic Finite Automata
+What is a DFA?
+
+A DFA is a 5-tuple:
+M = (Q, Σ, δ, q₀, F)
+
+Part	Meaning
+Q	Finite set of states
+Σ (sigma)	Input alphabet
+δ	Transition function: δ(q, a) → q'
+q₀	Start state (q₀ ∈ Q)
+F	Set of final (accepting) states
+Key Properties:
+
+Deterministic: At each step, only ONE possible next state.
+
+No ambiguity.
+
+Every input symbol must have a defined transition in every state.
+
+
+
+
+🔹 2. NFA: Nondeterministic Finite Automata
+What’s different?
+
+Still a 5-tuple: (Q, Σ, δ, q₀, F)
+
+BUT:
+
+δ(q, a) can return multiple states
+
+Transitions can be missing
+
+More than one possible path for input
+
+👉 A string is accepted if at least one path leads to a final state.
+
+Why do we care?
+
+NFAs are easier to design
+
+Every NFA can be converted to a DFA
+
+
+
+
+🔹 3. ε-NFA: NFA with Epsilon (ε) Transitions
+
+Adds a new twist:
+
+ε-transitions: move from one state to another without consuming input
+
+So, the machine can "move silently" to another state
+
+To simulate:
+
+Before reading input symbol, check ε-closure:
+
+Set of all states reachable using only ε-transitions.
+
+
+
+🔹 4. Conversions
+NFA → DFA
+
+Use subset construction
+
+DFA states = sets of NFA states
+
+Can be exponential in size
+
+
+ε-NFA → DFA
+
+First: convert ε-NFA to NFA by computing ε-closures
+
+Then: convert that NFA to DFA
+
+
+
+
+🔹 5. Moore vs Mealy Machines (Machines with Output)
+
+Both are Finite State Machines with outputs — but:
+
+Feature             |     	Moore Machine            |        	Mealy Machine
+Output depends on	  |           State                |    	State and input symbol
+Output appears	    |   On entering a state          |     	On transitions
+Notation            | 	Output is shown on state     |	Output is shown on edge (input/output)
+
+
+
+
+
+------------------------------------------------------------------------------
+✅ UNIT III: Regular Expressions & Languages
+
+
+1. Operators in Regular Expressions
+
+Union ( + or ∪ ):
+Describes the choice between languages.
+Example: (a + b) means either a or b.
+
+Concatenation:
+Strings put one after the other.
+Example: ab means a followed by b.
+
+Kleene Star ( * ):
+Zero or more repetitions of a language.
+Example: a* means any number of as, including none.
+
+
+
+2. Convert FA ↔ Regular Expression
+
+You should be able to:
+
+Convert an FA to an equivalent Regular Expression (using state elimination or Arden’s theorem).
+
+Convert a Regular Expression to an FA (usually NFA with ε-transitions).
+
+
+
+3. Arden’s Theorem
+
+Tool to solve equations like R = Q + RP for regular expressions.
+
+Helps in converting FA to Regular Expression systematically.
+
+
+
+4. Pumping Lemma
+
+Used to prove a language is NOT regular.
+
+You’ll use it to show that no finite automaton can recognize certain languages.
+
+Based on the idea that long enough strings can be "pumped" (repeated in parts) and stay in the language if regular.
+
+
+
+5. FSM Minimization (Table Filling Algorithm)
+
+Algorithm to minimize DFA states by merging equivalent states.
+
+Helps simplify machines without changing the language.
+
+
+
+6. Closure Properties
+
+Regular languages are closed under operations like:
+
+Union
+
+Intersection
+
+Complement
+
+Meaning if you perform these operations on regular languages, the result is still regular.
+
+
+                          ---------
+1️⃣ Conversions between FA and Regular Expressions
+FA → Regular Expression
+
+Method: State elimination or Arden’s theorem.
+
+Example:
+
+Suppose you have a DFA with:
+
+States: q0 (start), q1 (accepting)
+
+Alphabet: {a}
+
+Transitions:
+
+q0 —a→ q1
+
+q1 —a→ q0
+
+This accepts strings with an odd number of a’s.
+
+Regular expression?
+
+The pattern alternates every a, so the language is strings with odd length of as:
+
+(
+𝑎
+𝑎
+)
+∗
+𝑎
+(aa)
+∗
+a
+
+which can be written as:
+
+(
+𝑎
+𝑎
+)
+∗
+𝑎
+=
+(
+𝑎
+𝑎
+)
+∗
+𝑎
+(aa)
+∗
+a=(aa)
+∗
+a
+Regular Expression → FA
+
+Method: Use Thompson’s construction to build an NFA with ε-transitions.
+
+Example:
+Regular Expression: (a + b)*
+
+The corresponding NFA accepts any string made of a and b in any order and length.
+
+2️⃣ Designing Regular Expressions for Given Languages
+Example:
+
+Language: All strings over {0,1} that end with 01.
+
+Regular expression:
+
+(0+1)∗01
+
+Explanation:
+
+(0 + 1)^* means any string of 0s and 1s
+
+Followed by 01
+
+
+                        -------
+4️⃣ FSM Minimization (Table Filling Algorithm)
+Steps:
+
+List all pairs of states.
+
+Mark pairs where one is accepting and the other is not (distinguishable).
+
+Iteratively mark pairs distinguishable if their transitions lead to distinguishable pairs.
+
+Merge states not marked distinguishable.
+
+
+                        -------------
+Pumping Lemma Made Simple
+What is it about?
+
+It helps you prove a language is NOT regular.
+
+The idea is: If a language is regular, then long enough strings in that language can be broken into parts and one part can be repeated (or pumped) any number of times, and the new string will still belong to the language.
+
+The 3 parts of the string split
+
+Take any long string s in the language, and split it into 3 parts:
+s = xyz
+with these conditions:
+
+The first two parts x and y together are not longer than some number p (called the pumping length). So,
+
+∣
+𝑥
+𝑦
+∣
+≤
+𝑝
+∣xy∣≤p
+
+The middle part y is not empty (so 
+∣
+𝑦
+∣
+>
+0
+∣y∣>0)
+
+You can repeat y any number of times (including zero times), and the new string 
+𝑥
+𝑦
+𝑖
+𝑧
+xy
+i
+z should still be in the language for every 
+𝑖
+≥
+0
+i≥0.
+
+Why does this help?
+
+If you can find a string in the language where no matter how you split into xyz following these rules, repeating y breaks the rules of the language, then the language cannot be regular.
+
+Example: Language 
+𝐿
+=
+{
+𝑎
+𝑛
+𝑏
+𝑛
+∣
+𝑛
+≥
+0
+}
+L={a
+n
+b
+n
+∣n≥0}
+
+This language contains strings where the number of as equals the number of bs, like:
+ab, aabb, aaabbb, etc.
+
+Step 1: Assume 
+𝐿
+L is regular (we want to find contradiction)
+Step 2: The pumping lemma says there’s a pumping length p.
+
+Pick a string in 
+𝐿
+L of length at least p:
+
+𝑠
+=
+𝑎
+𝑝
+𝑏
+𝑝
+=
+𝑎
+𝑎
+𝑎
+.
+.
+.
+𝑎
+⏟
+𝑝
+ 
+𝑡
+𝑖
+𝑚
+𝑒
+𝑠
+𝑏
+𝑏
+𝑏
+.
+.
+.
+𝑏
+⏟
+𝑝
+ 
+𝑡
+𝑖
+𝑚
+𝑒
+𝑠
+s=a
+p
+b
+p
+=
+p times
+aaa...a
+	​
+
+	​
+
+p times
+bbb...b
+	​
+
+	​
+
+Step 3: Split 
+𝑠
+s into x y z, where:
+
+|xy| ≤ p means the parts x and y come from the first p characters, which are all as.
+
+y is not empty, so it has at least one a.
+
+Example split:
+
+𝑥
+=
+𝑎
+𝑘
+x=a
+k
+ (some number of a’s)
+
+𝑦
+=
+𝑎
+𝑚
+y=a
+m
+ (at least one a)
+
+𝑧
+=
+𝑎
+𝑝
+−
+𝑘
+−
+𝑚
+𝑏
+𝑝
+z=a
+p−k−m
+b
+p
+
+Step 4: Pump y zero times (
+𝑖
+=
+0
+i=0) — remove y:
+𝑥
+𝑦
+0
+𝑧
+=
+𝑎
+𝑝
+−
+𝑚
+𝑏
+𝑝
+xy
+0
+z=a
+p−m
+b
+p
+
+Now the number of as is less than the number of bs.
+
+Step 5: Is xy0z in 𝐿?
+
+No! Because L requires equal number of as and bs.
+
+Step 6: Contradiction!
+
+This means the pumping lemma fails, so the original assumption — that 
+L is regular — is false.
+
+Summary of the example:
+
+The string is long enough to pump.
+
+The part you pump comes only from as.
+
+Pumping (removing or repeating) that part breaks the balance. So 
+L is not regular.
+
+
+
+
+------------------------------------------------------------------------------
+1. Grammar Structure
+
+Variables (Non-terminals): Symbols representing sets of strings (like S, A, B).
+
+Terminals: Actual symbols in the language (like a, b).
+
+Start symbol: Where derivations begin (usually S).
+
+Productions (Rules): How variables can be replaced by terminals and/or other variables.
+
+Example:
+
+S→aSb∣ϵ
+
+Means S can be replaced by aSb or empty string ε.
+
+
+
+2. Derivations
+
+Leftmost derivation: Always replace the leftmost variable first.
+
+Rightmost derivation: Replace the rightmost variable first.
+
+
+
+3. Parse Trees and Ambiguity
+
+Parse Tree: Visual representation of how a string is generated by grammar.
+
+Ambiguity: A grammar is ambiguous if a string can have more than one parse tree.
+
+
+
+4. CFG ↔ FA conversions (Regular Grammar)
+
+Regular grammars are a subset of CFGs.
+
+They correspond to finite automata (FA).
+
+You can convert between them.
+
+
+
+5. Simplification
+
+Remove null productions (rules producing ε), unit productions (like A → B), and useless productions (not reachable or generating no strings).
+
+
+
+6. Normal Forms
+
+Chomsky Normal Form (CNF): Rules are in the form:
+
+𝐴→𝐵𝐶 or 𝐴→𝑎
+
+where A, B, C are variables and a is a terminal.
+
+Greibach Normal Form (GNF): Rules start with a terminal followed by variables.
+
+
+
+7. Pumping Lemma for CFLs & Closure Properties
+
+Similar to regular languages but adapted for CFLs.
+
+CFLs are closed under union, concatenation, and Kleene star but not intersection or complement.
+
+
+
+8. BNF notation
+
+A standard way to write grammars using < > for variables, ::= for productions, and | for alternatives.
+
+
+
+9. Chomsky Hierarchy
+
+Type 0: Unrestricted (Turing machines)
+
+Type 1: Context-sensitive
+
+Type 2: Context-free (CFG)
+
+Type 3: Regular (FA)
+
+
+
+                               --------
+
+1. Designing a CFG
+🧠 Language:
+
+L = { aⁿbⁿ | n ≥ 0 }
+(All strings with equal number of a’s followed by b’s: "", ab, aabb, aaabbb, etc.)
+
+🎯 Goal: Create rules that ensure:
+
+All a’s come first
+
+Then an equal number of b’s
+
+✅ CFG:
+
+S→aSb∣ε
+💡 How it works:
+
+Each time you add an a at the start, you must add a b at the end.
+
+ε (empty string) handles the base case when n = 0.
+
+✔ Example derivation:
+
+For string "aabb":
+
+S⇒aSb⇒aaSbb⇒aaεbb=aabb
+
+
+
+✅ 2. Identifying Ambiguity (Using Parse Trees)
+🧠 Grammar:
+
+S→SS∣a
+⚠ Problem:
+
+Is the grammar ambiguous for string "aa"?
+
+🧪 Try 2 different parse trees:
+📍 First Derivation:
+
+S⇒SS⇒aS⇒aa
+📍 Second Derivation:
+
+S⇒SS⇒Sa⇒aa
+✅ Since "aa" has two different parse trees, the grammar is ambiguous.
+✅ 3. Simplifying a Grammar (Removing ε, unit, useless productions)
+🧠 Given Grammar:
+
+S→A∣aA∣bA→ε
+🧾 Step 1: Remove ε-productions
+
+Since 
+
+A→ε, update all rules using A.
+
+New rules:
+
+
+S→A∣aA∣b⇒a∣aA∣A∣b
+
+Now remove A → ε.
+
+🧾 Step 2: Remove unit productions
+
+Unit production: 
+
+S→A
+
+Since A → ε is removed, eliminate S → A.
+
+Keep only:
+
+S→a∣aA∣b
+
+
+🧾 Step 3: Remove useless productions
+
+All variables used in derivations are still useful here. So final simplified grammar:
+
+
+S→a∣aA∣b
+
+
+
+✅ 4. Converting CFG to CNF (Chomsky Normal Form)
+Rules in CNF:
+
+Each production must be of the form:
+
+A→BC (2 non-terminals)
+
+
+A→a (a single terminal)
+
+🧠 Grammar:
+
+S→aSb∣ab
+🧾 Step 1: Remove terminals from mixed rules
+
+Introduce new variables:
+
+
+A→a, 
+
+B→b
+
+Now replace terminals in the main rule:
+
+S→ASB∣AB
+🧾 Step 2: Break rules with more than 2 variables
+
+S→ASB → needs to be broken
+Introduce new variable: 
+
+X→SB
+
+Now:
+S→AX,X→SB,S→AB
+🧾 Final CNF:
+
+S→AX∣ABX→SBA→aB→b
+🌟 Summary (What you now know how to do):
+Skill	Example you saw
+Design a CFG	For L = {aⁿbⁿ} → 
+S→aSb∣ε
+Detect ambiguity	Two parse trees for "aa"
+Simplify CFG	Removed ε, unit, useless productions
+Convert to CNF	Rewrote using new variables
+
+
+
+
+------------------------------------------------------------------------------
+What is a Pushdown Automaton (PDA)?
+
+A PDA is like a finite automaton but with a stack.
+It helps recognize context-free languages (CFLs) — the ones CFGs describe.
+
+1. PDA Definition
+
+A PDA is a 7-tuple:
+(Q,Σ,Γ,δ,q0,Z0,F)
+
+Where:
+
+Q: Set of states
+Σ: Input alphabet
+Γ: Stack alphabet
+
+δ: Transition function
+​
+
+: Start state
+​
+
+: Initial stack symbol
+
+𝐹
+F: Set of accepting states
+
+2. Transition Diagram (How it works)
+
+Transitions are written as:
+
+δ(q,a,X)=(p,γ)
+
+This means:
+
+In state q
+
+Reading input a
+
+Seeing X at top of stack
+→ Move to state p and replace X with γ on the stack
+
+✅ Stack is Last In, First Out (LIFO)
+
+3. Instantaneous Description (ID)
+
+An ID shows the current state, remaining input, and stack content:
+
+(q,w,α)
+
+Where:
+
+q is the current state
+
+w is the unprocessed input
+
+α is the current stack (top on the left)
+
+4. Acceptance Types
+
+PDA can accept strings in two ways:
+
+✔ By Final State:
+
+Machine reaches an accepting state after input is done.
+
+✔ By Empty Stack:
+
+Input is done, and stack is empty (even if state is not final).
+
+Both are valid — and for every PDA accepting by one method, there's another PDA accepting the same language by the other.
+
+5. CFG ↔ PDA Conversions
+✔ CFG → PDA
+
+You can build a PDA from any CFG that:
+
+Starts with the start variable on the stack
+
+Replaces variables using CFG rules (like leftmost derivation)
+
+Matches terminals by popping them when reading input
+
+✔ PDA → CFG
+
+You can also convert a PDA into a CFG, but it’s more technical.
+
+For now: most board questions ask CFG → PDA or ask you to design a PDA from a language.
+
+📌 Must Master: Design PDA for simple CFLs
+🎯 Example Language:
+
+L = { aⁿbⁿ | n ≥ 0 }
+(equal number of a’s followed by b’s)
+
+✅ Idea:
+
+Push each a onto the stack
+
+For each b, pop an a
+
+If the stack is empty after input → accept
+
+
+
+This PDA accepts all strings like:
+
+ε, ab, aabb, aaabbb, etc.
+
+
+
+
+
+------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+------------------------------------------------------------------------------
