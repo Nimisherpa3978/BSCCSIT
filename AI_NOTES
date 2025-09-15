@@ -1,0 +1,718 @@
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Unit I: Introduction to Artificial Intelligence
+🔍 1. Intelligence vs. Artificial Intelligence
+
+Intelligence: The ability to learn, understand, and apply knowledge. This is what humans naturally have.
+
+Artificial Intelligence (AI): A field in computer science that focuses on creating machines or software that can simulate human intelligence—like learning, reasoning, and problem-solving.
+
+Think of AI as teaching machines to “think” or “act” smart—like humans do.
+
+🤖 2. Perspectives of AI
+
+These are four major ways to look at AI systems:
+
+a. Acting Humanly (Turing Test Approach)
+
+Machines should behave like a human when interacting.
+
+Alan Turing proposed a test (Turing Test): if a machine can have a conversation with a person and they can’t tell it’s a machine, it's intelligent.
+
+b. Thinking Humanly (Cognitive Modeling)
+
+AI should try to think like the human brain.
+
+Tries to model how people think, using techniques from psychology and neuroscience.
+
+c. Acting Rationally (Rational Agent)
+
+AI should act in a way that achieves the best outcome, or the most logical result.
+
+Focus is on the correct action rather than mimicking human behavior.
+
+d. Thinking Rationally (Laws of Thought)
+
+Machines should follow logical rules to make decisions.
+
+Based on mathematical logic: if A is true and A implies B, then B must be true.
+
+🕰️ 3. History of AI (Short Overview)
+
+1950s: AI concept proposed; Turing Test introduced.
+
+1956: AI formally started as a field (Dartmouth Conference).
+
+1960s–70s: Early AI programs (chess, solving problems).
+
+1980s: Expert systems became popular.
+
+2000s–Now: Rapid progress due to big data, machine learning, neural networks, and computing power.
+
+🧠 4. Foundations of AI (Multidisciplinary Roots)
+
+AI draws ideas from many fields:
+
+Discipline	Contribution to AI
+Philosophy	Logic, reasoning, ethics
+Economics	Decision-making, game theory
+Psychology	Human cognition and behavior
+Sociology	Social interactions and impact
+Linguistics	Language understanding
+Neuroscience	Brain structure and functioning
+Mathematics	Algorithms, probability, logic
+Computer Science	Programming, data structures, algorithms
+Control Theory	Designing systems that adjust to environments
+🚀 5. Applications of AI
+
+AI is being used everywhere! Examples include:
+
+Healthcare: Diagnosis, medical imaging, drug discovery
+
+Finance: Fraud detection, automated trading
+
+Education: Intelligent tutoring systems
+
+Robotics: Autonomous robots, drones
+
+Transportation: Self-driving cars
+
+Entertainment: Game AI, recommendations (like Netflix)
+
+Customer Service: Chatbots, voice assistants (e.g., Siri, Alexa)
+
+Security: Surveillance, facial recognition
+
+✅ Summary:
+Concept	Key Point
+Intelligence	Human ability to think, learn
+AI	Machines simulating human-like intelligence
+4 Perspectives	Acting/Thinking Humanly or Rationally
+History	From early logic-based systems to modern machine learning
+Foundations	Multidisciplinary – from philosophy to computer science
+Applications	Wide range – health, finance, education, robotics, etc.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ Unit II: Intelligent Agents
+🤖 1. What is an Agent?
+
+An agent is anything that can perceive its environment through sensors and act upon that environment through actuators.
+
+In AI, agents can be software programs or robots.
+
+Example: A robot vacuum cleaner senses dirt (sensor) and moves to clean it (actuator).
+
+🧱 2. Agent Structure & Properties
+
+An agent has two main parts:
+
+Sensors → Get information from the environment.
+
+Actuators → Perform actions in the environment.
+
+⚙️ Agent Properties:
+Property	Description
+Autonomy	Works independently without human input.
+Reactivity	Responds to changes in the environment.
+Proactiveness	Takes initiative to achieve goals.
+Social ability	Can interact with other agents or humans.
+📦 3. PEAS Model (used to define any AI system)
+
+PEAS stands for:
+
+Component	Meaning
+P – Performance Measure	What defines success for the agent?
+E – Environment	The world where the agent operates.
+A – Actuators	The parts that perform actions.
+S – Sensors	The parts that receive inputs.
+
+Example: Self-driving car
+
+Performance Measure: Safety, speed, obeying traffic laws
+
+Environment: Roads, traffic, pedestrians
+
+Actuators: Steering, brakes, accelerator
+
+Sensors: Cameras, GPS, radar
+
+👨‍💻 4. Types of Agents
+a. Simple Reflex Agent
+
+Acts only based on current perception.
+
+No memory of past or model of the world.
+
+Example: Room heater turns on if temperature is low.
+
+b. Model-Based Reflex Agent
+
+Keeps a model of the world to handle partially observable environments.
+
+Can remember some past inputs to make better decisions.
+
+c. Goal-Based Agent
+
+Uses goals to decide which actions to take.
+
+Chooses actions that move it closer to achieving its goal.
+
+d. Utility-Based Agent
+
+Chooses actions not just based on goal, but also on how beneficial the outcome is.
+
+Has a utility function to measure the "happiness" or usefulness of results.
+
+e. Learning Agent
+
+Can improve over time by learning from experience.
+
+Has components for learning, performance, and feedback.
+
+🌍 5. Environment Classifications
+
+AI environments can be classified into types based on different factors:
+
+Classification	Types	Description
+Deterministic vs Stochastic		
+- Deterministic	Outcome is predictable (no randomness).	
+- Stochastic	Outcome involves uncertainty.	
+Static vs Dynamic		
+- Static	Environment doesn't change while the agent is deciding.	
+- Dynamic	Environment changes over time (with or without the agent).	
+Observable vs Partially Observable		
+- Fully Observable	Agent has access to all relevant information.	
+- Partially Observable	Agent has limited or noisy information.	
+Single-Agent vs Multi-Agent		
+- Single-Agent	Only one agent is acting (no competition or cooperation).	
+- Multi-Agent	Multiple agents act and possibly interact or compete.	
+✅ Quick Summary Table:
+Concept	Key Points
+Agent	Entity that senses and acts
+PEAS	Performance, Environment, Actuators, Sensors
+Agent Types	Reflex, Model-based, Goal-based, Utility-based, Learning
+Environment Types	Deterministic/Stochastic, Static/Dynamic, Observable, Single/Multi-agent
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ Unit III: Problem Solving by Searching
+🧩 1. Problem Formulation in AI
+
+Before solving a problem, we need to represent it properly using:
+
+🔹 State Space:
+
+The set of all possible states the problem can be in.
+
+Example: In a maze, each position is a state.
+
+🔹 Initial State:
+
+Where the problem starts.
+
+🔹 Goal State(s):
+
+The target or desired state.
+
+🔹 Actions:
+
+Operations that move the agent from one state to another.
+
+🔹 Transition Model:
+
+Describes what happens when an action is taken (i.e., rules for moving between states).
+
+🔹 Path Cost:
+
+A value assigned to each step; total cost = sum of steps from start to goal.
+
+Example Problem: Finding the shortest path in a map.
+
+States: Locations on the map
+
+Actions: Move from one location to another
+
+Goal: Reach destination
+
+Path cost: Distance between cities
+
+🔍 2. Search Strategy Comparison Criteria
+
+When comparing different search algorithms, we evaluate based on:
+
+Criteria	Description
+Time Complexity	How fast does it run (how many steps)?
+Space Complexity	How much memory does it use?
+Completeness	Will it always find a solution if one exists?
+Optimality	Will it always find the best (lowest cost) solution?
+🚶‍♂️ 3. Uninformed Search Strategies (No domain knowledge used)
+
+These do not use any info about goal location (no heuristics).
+
+Method	Description	Complete	Optimal
+Breadth-First Search (BFS)	Explores level by level	✅ Yes	✅ Yes (if cost = 1)
+Depth-First Search (DFS)	Explores as deep as possible	❌ No (can get stuck)	❌ No
+Depth-Limited Search	DFS with a depth limit	✅/❌ (depends on limit)	❌
+Iterative Deepening DFS (IDDFS)	Repeats DFS with increasing limits	✅ Yes	✅ Yes
+Uniform Cost Search	Expands lowest-cost path first	✅ Yes	✅ Yes
+Bidirectional Search	Searches forward from start and backward from goal	✅ Yes	✅ Yes
+🎯 4. Informed Search (Heuristic Search)
+
+These use heuristics: estimates of how close a state is to the goal.
+
+🔹 Heuristic (h(n)):
+
+A guess of the cost to reach the goal from node n.
+
+🔹 Admissible Heuristic:
+
+Never overestimates the true cost to the goal → guarantees optimality.
+
+Method	Description	Uses Heuristic?	Optimal?
+Greedy Best-First Search	Chooses node that seems closest to goal (by h(n))	✅ Yes	❌ No
+A Search*	Uses both cost so far (g(n)) and heuristic (h(n)): f(n) = g(n) + h(n)	✅ Yes	✅ Yes (if h is admissible)
+Hill Climbing	Moves toward the best immediate neighbor	✅ Yes	❌ No (can get stuck in local max)
+Simulated Annealing	Similar to Hill Climbing but accepts worse moves sometimes to escape local max	✅ Yes	❌ Not guaranteed
+🎮 5. Game Playing in AI
+
+For competitive environments (like chess, tic-tac-toe), agents must make decisions considering the opponent.
+
+🔹 Minimax Algorithm
+
+Assumes opponent plays optimally.
+
+Maximizes the agent’s win and minimizes the opponent's win.
+
+Used in two-player games.
+
+🔹 Alpha-Beta Pruning
+
+Improves Minimax by skipping unnecessary branches, making it faster without changing the result.
+
+🔧 6. Constraint Satisfaction Problems (CSPs)
+
+A different kind of problem where:
+
+The goal is to assign values to variables such that all constraints are satisfied.
+
+Examples:
+
+Sudoku
+
+Map coloring
+
+Scheduling
+
+Components:
+
+Variables: Items to assign values to (e.g., regions on a map).
+
+Domains: Possible values (e.g., colors).
+
+Constraints: Rules (e.g., adjacent regions can’t be the same color).
+
+CSPs are solved using backtracking, forward checking, and constraint propagation.
+
+✅ Summary Table:
+Topic	Key Points
+Problem Formulation	Initial state, goal, actions, cost
+Evaluation	Time/space complexity, completeness, optimality
+Uninformed Search	BFS, DFS, IDDFS, Uniform Cost, etc.
+Informed Search	A*, Greedy, Hill Climbing, Simulated Annealing
+Game Playing	Minimax, Alpha-Beta Pruning
+CSPs	Variables + Domains + Constraints
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ Unit IV: Knowledge Representation
+🧠 1. What is Knowledge?
+
+Knowledge is information or understanding that an AI system uses to make decisions or solve problems.
+
+AI needs to represent knowledge in a way that a machine can process, store, and reason with it.
+
+🗂️ 2. Knowledge Representation Systems
+
+These systems organize and store knowledge so that the AI can use it effectively.
+
+✅ Key Properties of a Good Representation System:
+Property	Description
+Representational Adequacy	Can express all necessary knowledge.
+Inferential Adequacy	Supports deriving new knowledge from known facts.
+Inferential Efficiency	Enables fast and efficient reasoning.
+Acquisitional Efficiency	Easy to add new knowledge.
+📚 3. Representation Schemes (Methods to Represent Knowledge)
+🔹 a. Semantic Networks
+
+Represents knowledge using graphs.
+
+Nodes = Concepts; Edges = Relationships
+
+Example:
+Cat → is-a → Animal
+Cat → has → Tail
+
+🔹 b. Frames
+
+Data structures to represent "stereotyped situations".
+
+Like an object with slots (attributes) and values.
+
+Example:
+Frame: Car → {Color: Red, Engine: Petrol}
+
+🔹 c. Conceptual Dependencies
+
+Used to represent the meaning of natural language sentences.
+
+Focuses on actions and actor-object relationships.
+
+🔹 d. Scripts
+
+Represents event sequences that usually happen in a particular context.
+
+Example: A restaurant script → Enter → Order → Eat → Pay → Leave
+
+🔹 e. Rule-Based Systems
+
+Use IF-THEN rules to represent logic.
+
+Example:
+IF it is raining THEN carry an umbrella
+
+🔢 4. Propositional Logic (PL)
+✅ Used for: Representing facts that are either true or false
+📌 Components:
+Term	Meaning
+Syntax	Structure and symbols (P, Q, etc.)
+Semantics	Meaning (True or False values)
+Connectives	AND (∧), OR (∨), NOT (¬), IMPLIES (→), IFF (↔)
+Truth Tables	Used to show how truth values are computed
+Tautology	Always true, no matter the values
+Validity	True in all interpretations of the formula
+🔁 5. Inference Methods in PL
+
+Used to derive new facts from known facts.
+
+🔹 Resolution:
+
+A rule of inference to combine clauses and prove a statement.
+
+Basis for automated theorem proving.
+
+🔹 Forward Chaining:
+
+Start from known facts and apply rules to reach the goal.
+
+🔹 Backward Chaining:
+
+Start from the goal and work backwards to see if known facts support it.
+
+∀ 6. First-Order Predicate Logic (FOPL)
+🧮 More powerful than Propositional Logic – supports variables, relations, and quantifiers.
+✅ Key Concepts:
+Concept	Description
+Syntax	Uses constants, variables, functions, predicates
+Semantics	Meaning of statements in the domain
+Quantifiers	∀ (for all), ∃ (there exists)
+🔍 Inference in FOPL:
+
+Unification: Match variables in logical expressions.
+
+Resolution: Extended for predicates.
+
+Example:
+∀x (Human(x) → Mortal(x))
+Human(Socrates)
+⇒ Mortal(Socrates)
+
+🎲 7. Representing Uncertain Knowledge
+
+Real-world info is often incomplete or uncertain. We use probabilistic models:
+
+🔹 Random Variables:
+
+Variables with possible values that occur with certain probabilities.
+
+🔹 Bayes’ Theorem:
+
+Formula for updating probability of a hypothesis given new evidence.
+
+P(H|E) = [P(E|H) × P(H)] / P(E)
+
+🔹 Bayesian Networks:
+
+Graphical models showing dependencies between variables.
+
+Nodes = Variables, Edges = Conditional dependencies
+
+🌫️ 8. Fuzzy Logic
+
+Used when knowledge is not black-and-white, but vague (fuzzy).
+
+🔹 Fuzzy Sets:
+
+Each element has a degree of membership (between 0 and 1).
+
+Example: "Tall" → A person 6'0 might be 0.8 in the "tall" set.
+
+🔹 Membership Function:
+
+Defines how input maps to fuzzy set (curve or formula).
+
+🔹 Fuzzy Rule-Based Systems:
+
+Like traditional rule-based systems, but with fuzzy logic.
+
+Example:
+IF temperature is high THEN fan speed is fast
+
+✅ Summary Table:
+Topic	Description
+Knowledge	Facts, rules, or relationships used by AI
+Representation Schemes	Semantic networks, frames, scripts, rules, etc.
+Propositional Logic	True/false logic using symbols
+FOPL	Advanced logic using variables and quantifiers
+Inference	Resolution, Forward & Backward chaining
+Uncertain Knowledge	Handled using probabilities and Bayesian networks
+Fuzzy Logic	Deals with imprecise concepts (e.g., "hot", "tall") 
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ Unit V: Machine Learning
+🤖 1. What is Machine Learning (ML)?
+
+Machine Learning is the branch of AI where machines learn from data to make decisions or predictions without being explicitly programmed.
+
+The goal is to allow systems to improve automatically with experience.
+
+🎓 2. Learning Paradigms (Types of Learning)
+🔹 a. Supervised Learning
+
+The machine is trained on labeled data (input + correct output).
+
+Example: Spam detection
+Data: Emails (input) + Labels (spam or not spam)
+
+🔹 b. Unsupervised Learning
+
+The machine is given unlabeled data and must find patterns or structure.
+
+Example: Customer segmentation
+Data: Customer behavior → Algorithm finds groups
+
+🔹 c. Reinforcement Learning
+
+The agent learns by interacting with an environment and receives rewards or penalties.
+
+Example: Game playing (e.g., chess AI learns by playing and getting scores)
+
+📊 3. Statistical Learning – Naive Bayes Model
+🔹 Naive Bayes is a probabilistic classifier based on Bayes' Theorem:
+
+P(A|B) = [P(B|A) × P(A)] / P(B)
+
+"Naive": Assumes features are independent (which may not be true but works well in practice).
+
+Example:
+Predicting if a message is spam using the presence of certain words.
+
+🧬 4. Genetic Algorithms (Inspired by Natural Evolution)
+
+Genetic Algorithms (GAs) solve problems by evolving solutions over generations, just like natural selection.
+
+🔹 Steps in GA:
+Step	Description
+Selection	Pick the best solutions (individuals) based on performance (fitness).
+Crossover (Recombination)	Combine parts of two solutions to create a new one.
+Mutation	Randomly change parts of a solution to maintain diversity.
+Fitness Function	Measures how good a solution is (used during selection).
+
+Used in optimization problems where the solution space is huge.
+
+🧠 5. Neural Networks
+
+Artificial Neural Networks (ANNs) are inspired by the human brain and consist of nodes (neurons) connected in layers.
+
+🔹 a. Biological vs Artificial Neural Networks
+Biological Brain	Artificial Neural Network
+Neurons	Nodes
+Synapses	Weights
+Learning by practice	Learning by training data
+⚡ 6. Activation Functions
+
+These functions decide whether a neuron should activate based on input.
+
+Function	Description	Output Range
+Linear	f(x) = x	(-∞ to ∞)
+Step	0 or 1 output (threshold-based)	{0, 1}
+Sigmoid	Smooth curve between 0 and 1	(0, 1)
+
+Sigmoid is popular for binary classification.
+
+🔗 7. Types of Neural Networks
+Type	Description
+Feedforward Network	Data flows in one direction (input → output); no loops
+Recurrent Network (RNN)	Has loops; used for sequences (e.g., speech, time-series)
+Single-layer Network	One layer between input and output
+Multi-layer Network	Includes hidden layers; enables deep learning
+🏋️ 8. Training Methods in Neural Networks
+
+These methods adjust the weights to minimize errors and improve performance.
+
+🔹 a. Perceptron Learning
+
+Simple rule-based learning for binary classification.
+
+Adjusts weights when an error is made.
+
+🔹 b. Backpropagation
+
+Most common method in multi-layer networks.
+
+Uses gradient descent to minimize error by adjusting weights from output to input (backwards).
+
+🔹 c. Hebbian Learning
+
+Based on the principle: “Neurons that fire together, wire together.”
+
+Weights increase if both neurons are active at the same time.
+
+✅ Summary Table:
+Topic	Key Concepts
+Learning Types	Supervised, Unsupervised, Reinforcement
+Naive Bayes	Probabilistic, uses Bayes’ Theorem
+Genetic Algorithms	Evolution-inspired (Selection, Crossover, Mutation)
+Neural Networks	Brain-inspired; neurons, layers, weights
+Activation Functions	Linear, Step, Sigmoid
+Network Types	Feedforward, Recurrent, Single/Multi-layer
+Training Methods	Perceptron, Backpropagation, Hebbian
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+✅ Unit VI: Applications of AI
+
+This unit focuses on real-world applications of Artificial Intelligence in various domains, including expert systems, language, vision, and robotics.
+
+🧠 1. Expert Systems
+
+Expert Systems are AI programs that simulate the decision-making ability of a human expert.
+
+✅ Architecture of Expert Systems:
+Component	Role
+Knowledge Base	Stores facts and rules (domain knowledge).
+Inference Engine	Applies rules to known facts to infer new facts.
+User Interface	Allows user to input queries and receive advice or explanations.
+Working Memory	Temporary storage of data being processed (facts during reasoning).
+🔧 Development Process:
+
+Knowledge Acquisition – Gather data from human experts.
+
+Knowledge Representation – Use rules, frames, etc.
+
+System Design – Build the architecture.
+
+Implementation – Code the system.
+
+Testing & Evaluation – Check system accuracy.
+
+Maintenance – Update knowledge base regularly.
+
+Example: MYCIN (early medical expert system for diagnosing infections)
+
+🗣️ 2. Natural Language Processing (NLP)
+
+NLP allows computers to understand, interpret, and generate human language.
+
+🔹 Two Key Tasks:
+Term	Meaning
+NLU (Natural Language Understanding)	Interpreting human input (what does the user mean?)
+NLG (Natural Language Generation)	Producing human-like responses (how does the system reply?)
+🔹 NLP Pipeline (4 stages of language processing):
+Stage	Description
+Lexical Analysis	Breaking text into words/tokens (e.g., “I love AI” → I, love, AI)
+Syntactic Analysis	Grammar check (sentence structure)
+Semantic Analysis	Understanding meaning (e.g., AI is a "subject")
+Pragmatic Analysis	Understanding context and intent (e.g., sarcasm, commands)
+🔹 Machine Translation:
+
+Automatically converting text from one language to another.
+
+Example: English → Nepali using tools like Google Translate.
+
+Uses statistical models or deep learning models (like transformers).
+
+👁️‍🗨️ 3. Machine Vision
+
+Machine Vision enables machines to “see” and understand images or video.
+
+🔹 Concepts:
+
+Image Acquisition: Capturing images via camera.
+
+Processing & Analysis: Applying filters, detecting patterns, recognizing shapes.
+
+Decision Making: Interpreting what's seen (e.g., detect face, identify object).
+
+🔹 Components:
+Component	Description
+Camera/Sensor	Captures image
+Processor	Runs algorithms on images
+Software/Algorithm	Handles recognition, object detection, etc.
+🔹 Applications:
+
+Face recognition
+
+Object detection in self-driving cars
+
+Medical imaging (e.g., cancer detection from X-rays)
+
+Industrial inspection (detect defects in products)
+
+🤖 4. Robotics
+
+Robotics combines AI with hardware to create intelligent, physical agents that can interact with the real world.
+
+🔹 Robot Hardware Components:
+Component	Role
+Sensors	Sense the environment (e.g., camera, temperature sensor, ultrasonic sensor)
+Effectors	Act on the environment (e.g., wheels, arms, grippers, motors)
+🔹 Perception in Robotics:
+
+Process of gathering and interpreting sensor data.
+
+Helps robots understand surroundings and make decisions.
+
+Example: A robot uses a camera (sensor) to recognize a cup and uses an arm (effector) to pick it up.
+
+✅ Unit Summary Table:
+Topic	Key Concepts
+Expert Systems	Simulate human expertise using rules; involve knowledge base, inference engine, etc.
+NLP	Understand & generate human language; includes tokenization, syntax, semantics
+Machine Translation	Auto-translate between languages using statistical or neural models
+Machine Vision	Enables machines to "see" and analyze visual data
+Robotics	Combines sensors + effectors + perception to interact with the physical world
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+✅ Overview Table – At a Glance
+
+This table gives a quick summary of each unit, highlighting the main focus areas so you can revise efficiently.
+
+Unit	Core Focus	Explanation
+I	AI fundamentals, history, & interdisciplinary roots	Covers what AI is, how it compares to human intelligence, the evolution of AI over time, and how it connects with other fields like psychology, philosophy, math, and computer science.
+II	Intelligent agents and environment modeling	Focuses on how intelligent systems (agents) work, how they sense and act, how environments are classified, and how agents are structured using models like PEAS.
+III	Problem-solving via search strategies	Explores how AI solves problems using different search algorithms — both uninformed (like BFS, DFS) and informed (like A*, Greedy), plus game strategies and constraint-solving methods.
+IV	Knowledge representation & logical inference	Discusses how to represent and store knowledge (e.g., semantic networks, logic), and how AI systems use logic (propositional and predicate) to infer or reason new knowledge.
+V	Machine learning paradigms and neural networks	Introduces different learning types (supervised, unsupervised, reinforcement), models like Naive Bayes and Genetic Algorithms, and basics of neural networks including training methods.
+VI	Practical AI applications: Expert Systems, NLP, Vision, Robotics	Shows where AI is used in the real world — including systems that mimic expert decision-making, understand language, interpret images, and control robots.
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
