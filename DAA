@@ -1,0 +1,2219 @@
+----------------------------------------------SYLLABUS------------------------------------------------------------------
+Course Description : This course introduces basic elements of the design and analysis of computer algorithms. Topics include asymptotic notations and analysis, divide and conquer strategy, greedy methods, dynamic programming, basic graph algorithms, NP-completeness, and approximation algorithms. For each topic, beside in-depth coverage, one or more representative problems and their algorithms shall be discussed.
+
+Course Objective : Analyze the asymptotic performance of algorithms. Demonstrate a familiarity with major algorithm design techniques Apply important algorithmic design paradigms and methods of analysis. Solve simple to moderately difficult algorithmic problems arising in applications. Able to demonstrate the hardness of simple NP-complete problems
+---------------------------------------------------------------------------------------------------------------------------
+Course Contents:
+Unit 1. Foundation of Algorithm Analysis4 Hrs.
+1.1. Algorithm and its properties, RAM model, Time and Space Complexity, detailed analysis of algorithms (Like factorial algorithm), Concept of Aggregate Analysis
+1.2. Asymptotic Notations: Big-O, Big-Ω and Big-Ө Notations their Geometrical Interpretation and Examples.
+1.3. Recurrences: Recursive Algorithms and Recurrence Relations, Solving Recurrences (Recursion Tree Method, Substitution Method, Application of Masters Theorem)
+--->
+1.1 Algorithm and Its Properties
+What is an Algorithm?
+
+An algorithm is a finite sequence of well-defined steps to solve a problem or perform a computation.
+
+📌 Example: Steps to calculate factorial of a number.
+
+Properties (Characteristics) of an Algorithm
+
+An algorithm must satisfy the following:
+
+Input – Takes zero or more inputs
+
+Output – Produces at least one output
+
+Definiteness – Each step is clear and unambiguous
+
+Finiteness – Terminates after finite steps
+
+Effectiveness – Steps are basic and feasible
+
+Correctness – Gives correct output for all valid inputs
+
+👉 These are often asked in exams.
+
+RAM Model (Random Access Machine Model)
+
+The RAM model is a theoretical model used to analyze algorithm performance.
+
+Assumptions of RAM Model
+
+Each instruction takes constant time
+
+Memory access takes constant time
+
+Uses simple operations: +, −, ×, /, comparison
+
+📌 Helps us count number of operations, not actual execution time.
+
+Time Complexity
+Definition
+
+Time complexity is the amount of time an algorithm takes as a function of input size n.
+
+We measure:
+
+Best Case
+
+Average Case
+
+Worst Case (most important for exams)
+
+📌 Expressed using asymptotic notations (O, Ω, Θ).
+
+Space Complexity
+Definition
+
+Space complexity is the total memory used by an algorithm.
+
+Includes:
+
+Fixed space (constants, variables)
+
+Variable space (arrays, recursion stack)
+
+Detailed Analysis of Algorithm (Factorial Example)
+Factorial Algorithm (Iterative)
+FACT(n)
+1. result ← 1
+2. for i = 1 to n
+3.     result ← result × i
+4. return result
+
+Time Complexity Analysis
+
+Loop runs n times
+
+Each operation is constant time
+
+👉 Time Complexity = O(n)
+
+Space Complexity
+
+Uses only constant variables
+
+👉 Space Complexity = O(1)
+
+Concept of Aggregate Analysis
+What is Aggregate Analysis?
+
+Aggregate analysis finds the average cost per operation over a sequence of operations without considering probabilistic input.
+
+Example
+
+If total cost of n operations is n²
+👉 Average cost per operation = n² / n = n
+
+📌 Used in amortized analysis (e.g., stack operations).
+
+1.2 Asymptotic Notations
+
+Asymptotic notations describe growth rate of functions as input size becomes large.
+
+Big-O Notation (O)
+Definition
+
+Big-O gives the upper bound (worst-case complexity).
+
+If
+f(n) ≤ c × g(n) for all n ≥ n₀
+
+👉 Then f(n) = O(g(n))
+
+Example
+f(n) = 3n + 5
+O(n)
+
+Big-Omega Notation (Ω)
+Definition
+
+Big-Ω gives the lower bound (best-case complexity).
+
+If
+f(n) ≥ c × g(n) for all n ≥ n₀
+
+👉 Then f(n) = Ω(g(n))
+
+Example
+f(n) = 3n + 5
+Ω(n)
+
+Big-Theta Notation (Θ)
+Definition
+
+Big-Θ gives the tight bound (both upper and lower).
+
+If
+c₁g(n) ≤ f(n) ≤ c₂g(n)
+
+👉 Then f(n) = Θ(g(n))
+
+Example
+f(n) = 3n + 5
+Θ(n)
+
+Geometrical Interpretation
+Notation	Meaning
+O(g(n))	f(n) lies below g(n)
+Ω(g(n))	f(n) lies above g(n)
+Θ(g(n))	f(n) lies between two curves
+
+📌 Often asked as theory + diagram question.
+
+1.3 Recurrences
+Recursive Algorithms
+
+A recursive algorithm solves a problem by calling itself on smaller inputs.
+
+Example: Factorial (Recursive)
+fact(n):
+if n == 0 return 1
+return n × fact(n−1)
+
+Recurrence Relation
+
+A recurrence relation expresses time complexity of a recursive algorithm.
+
+📌 General form:
+
+T(n) = aT(n/b) + f(n)
+
+Solving Recurrences
+1. Recursion Tree Method
+
+Break the recurrence into a tree of subproblems.
+
+Example
+T(n) = 2T(n/2) + n
+
+
+Level 0 cost: n
+
+Level 1 cost: n
+
+Level 2 cost: n
+
+Height: log n
+
+👉 Total Cost = n log n
+
+2. Substitution Method
+
+Guess the solution
+
+Prove by mathematical induction
+
+Example
+T(n) = 2T(n/2) + n
+Assume T(n) = O(n log n)
+
+
+Prove by substitution.
+
+📌 Used mostly in theoretical questions.
+
+3. Master’s Theorem
+
+Used to solve recurrences of the form:
+
+T(n) = aT(n/b) + f(n)
+
+Three Cases
+Case	Condition	Result
+Case 1	f(n) < n^(logb a)	Θ(n^(logb a))
+Case 2	f(n) = n^(logb a)	Θ(n^(logb a) log n)
+Case 3	f(n) > n^(logb a)	Θ(f(n))
+Example
+T(n) = 2T(n/2) + n
+
+
+a = 2
+
+b = 2
+
+f(n) = n
+
+log₂2 = 1
+
+👉 Case 2
+
+✔ T(n) = Θ(n log n)
+
+EXAM TIPS (IMPORTANT)
+
+✔ Define algorithm & properties
+✔ Explain RAM model
+✔ Factorial analysis (very common)
+✔ Big-O, Ω, Θ definitions with examples
+✔ Solve at least one recurrence using Master’s Theorem
+------------------------------------------------------------------------------------------------------------------
+Unit 2. Iterative Algorithms4 Hrs.
+2.1. Basic Algorithms: Algorithm for GCD, Fibonacci Number and analysis of their time and space complexity
+2.2. Searching Algorithms: Sequential Search and its analysis
+2.3. Sorting Algorithms: Bubble, Selection, and Insertion Sort and their Analysis
+--->
+2.1 Basic Algorithms
+1️⃣ Algorithm for GCD (Greatest Common Divisor)
+What is GCD?
+
+GCD of two numbers is the largest number that divides both numbers.
+
+📌 Example:
+GCD of 12 and 18 = 6
+
+Euclidean Algorithm (Iterative)
+
+Idea:
+Keep dividing until the remainder becomes 0.
+
+Algorithm
+GCD(a, b)
+while b ≠ 0
+    r = a % b
+    a = b
+    b = r
+return a
+
+Time Complexity
+
+Each step reduces the number
+
+Runs at most log n times
+
+👉 Time Complexity: O(log n)
+
+Space Complexity
+
+Uses only variables
+
+👉 Space Complexity: O(1)
+
+2️⃣ Fibonacci Number (Iterative)
+What is Fibonacci Series?
+
+Each number is the sum of previous two numbers.
+
+📌 Series:
+0, 1, 1, 2, 3, 5, 8, 13 …
+
+Iterative Algorithm
+Fibonacci(n)
+if n == 0 return 0
+if n == 1 return 1
+
+a = 0, b = 1
+for i = 2 to n
+    c = a + b
+    a = b
+    b = c
+return b
+
+Time Complexity
+
+Loop runs n times
+
+👉 Time Complexity: O(n)
+
+Space Complexity
+
+Uses only 3 variables
+
+👉 Space Complexity: O(1)
+
+2.2 Searching Algorithm
+Sequential Search (Linear Search)
+What is Searching?
+
+Finding an element in a list.
+
+Sequential Search
+
+Check elements one by one from start to end.
+
+📌 Works on sorted and unsorted arrays.
+
+Algorithm
+LinearSearch(A, n, key)
+for i = 1 to n
+    if A[i] == key
+        return i
+return -1
+
+Time Complexity
+Case	Time
+Best Case	O(1)
+Worst Case	O(n)
+Average Case	O(n)
+
+👉 Overall: O(n)
+
+Space Complexity
+
+No extra memory used
+
+👉 O(1)
+
+2.3 Sorting Algorithms
+What is Sorting?
+
+Arranging elements in ascending or descending order.
+
+📌 Example:
+Before: 5, 2, 4, 1
+After: 1, 2, 4, 5
+
+1️⃣ Bubble Sort
+Idea
+
+Compare adjacent elements
+
+Swap if they are in wrong order
+
+Biggest element bubbles up to the end
+
+Algorithm
+BubbleSort(A, n)
+for i = 1 to n-1
+    for j = 1 to n-i
+        if A[j] > A[j+1]
+            swap(A[j], A[j+1])
+
+Time Complexity
+Case	Time
+Best	O(n)
+Worst	O(n²)
+Average	O(n²)
+Space Complexity
+
+👉 O(1) (in-place)
+
+Advantages
+
+✔ Very easy to understand
+✔ Simple implementation
+
+Disadvantages
+
+❌ Very slow for large data
+
+2️⃣ Selection Sort
+Idea
+
+Find smallest element
+
+Put it at the beginning
+
+Repeat for remaining list
+
+Algorithm
+SelectionSort(A, n)
+for i = 1 to n-1
+    min = i
+    for j = i+1 to n
+        if A[j] < A[min]
+            min = j
+    swap(A[i], A[min])
+
+Time Complexity
+Case	Time
+Best	O(n²)
+Worst	O(n²)
+Average	O(n²)
+Space Complexity
+
+👉 O(1)
+
+Advantages
+
+✔ Fewer swaps
+✔ Simple logic
+
+Disadvantages
+
+❌ Always slow (O(n²))
+
+3️⃣ Insertion Sort
+Idea
+
+Like arranging playing cards
+
+Insert each element in its correct position
+
+Algorithm
+InsertionSort(A, n)
+for i = 2 to n
+    key = A[i]
+    j = i - 1
+    while j ≥ 1 and A[j] > key
+        A[j+1] = A[j]
+        j = j - 1
+    A[j+1] = key
+
+Time Complexity
+Case	Time
+Best (sorted list)	O(n)
+Worst	O(n²)
+Average	O(n²)
+Space Complexity
+
+👉 O(1)
+
+Advantages
+
+✔ Fast for small or sorted data
+✔ Stable sorting
+
+Disadvantages
+
+❌ Slow for large data
+
+📌 COMPARISON TABLE (VERY IMPORTANT)
+Algorithm	Best	Worst	Space
+Bubble	O(n)	O(n²)	O(1)
+Selection	O(n²)	O(n²)	O(1)
+Insertion	O(n)	O(n²)	O(1)
+EXAM TIPS
+
+✔ Write algorithm steps clearly
+✔ Mention time & space complexity
+✔ Use simple examples
+✔ Comparison table = high marks
+
+
+---------------------------------------------------------------------------------------------------------------
+Unit 3. Divide and Conquer Algorithms8 Hrs.
+3.1. Searching Algorithms: Binary Search, Min-Max Finding and their Analysis
+3.2. Sorting Algorithms: Merge Sort and Analysis, Quick Sort and Analysis (Best Case, Worst Case and Average Case), Heap Sort (Heapify, Build Heap and Heap Sort Algorithms and their Analysis), Randomized Quick sort and its Analysis
+3.3. Order Statistics: Selection in Expected Linear Time, Selection in Worst Case Linear Time and their Analysis.
+-->
+UNIT 3: DIVIDE AND CONQUER ALGORITHMS (8 Hrs)
+What is Divide and Conquer?
+
+Divide and Conquer is a technique where a problem is solved in three steps:
+
+Divide – Break the problem into smaller sub-problems
+
+Conquer – Solve each sub-problem
+
+Combine – Combine results to get the final answer
+
+📌 Example: Merge Sort, Quick Sort, Binary Search
+
+3.1 Searching Algorithms
+1️⃣ Binary Search
+Idea
+
+Works only on a sorted array
+
+Compare middle element with key
+
+Reduce search space by half
+
+Algorithm
+BinarySearch(A, low, high, key)
+if low > high
+    return -1
+
+mid = (low + high) / 2
+
+if A[mid] == key
+    return mid
+else if key < A[mid]
+    return BinarySearch(A, low, mid-1, key)
+else
+    return BinarySearch(A, mid+1, high, key)
+
+Time Complexity
+Case	Time
+Best	O(1)
+Worst	O(log n)
+Average	O(log n)
+Space Complexity
+
+Recursive version: O(log n)
+
+Iterative version: O(1)
+
+2️⃣ Min-Max Finding (Divide & Conquer)
+Problem
+
+Find minimum and maximum element in an array using fewer comparisons.
+
+Idea
+
+Divide array into two halves
+
+Find min & max of each half
+
+Compare results
+
+Algorithm Idea
+MinMax(A, low, high)
+if low == high
+    min = max = A[low]
+else if high == low + 1
+    compare A[low] and A[high]
+else
+    mid = (low + high) / 2
+    (min1, max1) = MinMax(A, low, mid)
+    (min2, max2) = MinMax(A, mid+1, high)
+
+    min = smaller(min1, min2)
+    max = larger(max1, max2)
+
+Time Complexity
+
+Number of comparisons ≈ 3n/2 – 2
+
+👉 Time Complexity: O(n)
+
+Space Complexity
+
+👉 O(log n) (recursion)
+
+3.2 Sorting Algorithms
+1️⃣ Merge Sort
+Idea
+
+Divide array into halves
+
+Sort each half
+
+Merge sorted halves
+
+Algorithm
+MergeSort(A, l, r)
+if l < r
+    mid = (l + r) / 2
+    MergeSort(A, l, mid)
+    MergeSort(A, mid+1, r)
+    Merge(A, l, mid, r)
+
+Time Complexity
+Case	Time
+Best	O(n log n)
+Worst	O(n log n)
+Average	O(n log n)
+Space Complexity
+
+👉 O(n) (extra array)
+
+Advantages
+
+✔ Very efficient
+✔ Stable sorting
+
+Disadvantages
+
+❌ Uses extra memory
+
+2️⃣ Quick Sort
+Idea
+
+Choose a pivot
+
+Place pivot at correct position
+
+Elements smaller → left, larger → right
+
+Algorithm
+QuickSort(A, low, high)
+if low < high
+    p = Partition(A, low, high)
+    QuickSort(A, low, p-1)
+    QuickSort(A, p+1, high)
+
+Time Complexity
+Case	Time
+Best	O(n log n)
+Average	O(n log n)
+Worst	O(n²)
+
+📌 Worst case occurs when pivot is smallest or largest element.
+
+Space Complexity
+
+👉 O(log n) (average)
+
+Advantages
+
+✔ Very fast in practice
+✔ In-place sorting
+
+Disadvantages
+
+❌ Worst-case is slow
+
+3️⃣ Heap Sort
+Heap
+
+A heap is a complete binary tree where:
+
+Max Heap: parent ≥ children
+
+Min Heap: parent ≤ children
+
+Heapify
+Idea
+
+Fix heap property at a node.
+
+Heapify(A, n, i)
+largest = i
+l = 2i
+r = 2i + 1
+
+if l ≤ n and A[l] > A[largest]
+    largest = l
+if r ≤ n and A[r] > A[largest]
+    largest = r
+
+if largest ≠ i
+    swap(A[i], A[largest])
+    Heapify(A, n, largest)
+
+Build Heap
+
+Call Heapify from bottom nodes
+
+Converts array into heap
+
+👉 Time: O(n)
+
+Heap Sort Algorithm
+
+Build max heap
+
+Swap first and last element
+
+Reduce heap size
+
+Heapify again
+
+Time Complexity
+Case	Time
+Best	O(n log n)
+Worst	O(n log n)
+Average	O(n log n)
+Space Complexity
+
+👉 O(1)
+
+4️⃣ Randomized Quick Sort
+Idea
+
+Choose pivot randomly
+
+Reduces chance of worst case
+
+Why Randomization?
+
+Prevents bad input order.
+
+Time Complexity
+Case	Time
+Best	O(n log n)
+Expected	O(n log n)
+Worst	O(n²) (rare)
+3.3 Order Statistics
+What is Order Statistic?
+
+Finding the k-th smallest or largest element.
+
+📌 Example:
+
+1st smallest = minimum
+
+n/2-th smallest = median
+
+1️⃣ Selection in Expected Linear Time (Randomized Select)
+Idea
+
+Based on Quick Sort
+
+Uses random pivot
+
+Only explores one side
+
+Time Complexity
+
+👉 Expected O(n)
+
+Why Fast?
+
+Random pivot avoids worst case most of the time
+
+2️⃣ Selection in Worst Case Linear Time (Median of Medians)
+Idea
+
+Divide elements into groups of 5
+
+Find median of each group
+
+Find median of medians
+
+Use it as pivot
+
+Guarantee
+
+✔ Balanced partition always
+
+Time Complexity
+
+👉 Worst Case O(n)
+
+Why Important?
+
+Gives guaranteed performance
+
+Used in theoretical analysis
+
+📌 IMPORTANT COMPARISON TABLE
+Algorithm	Best	Worst	Space
+Merge Sort	n log n	n log n	O(n)
+Quick Sort	n log n	n²	O(log n)
+Heap Sort	n log n	n log n	O(1)
+Randomized QS	n log n	n²	O(log n)
+EXAM TIPS
+
+✔ Divide & Conquer steps
+✔ Binary Search needs sorted array
+✔ Merge vs Quick vs Heap comparison
+✔ Randomized Quick Sort advantage
+✔ Order statistics definitions
+---------------------------------------------------------------------------------------------------------------
+Unit 4. Greedy Algorithms6 Hrs.
+4.1. Optimization Problems and Optimal Solution, Introduction of Greedy Algorithms, Elements of Greedy Strategy.
+4.2. Greedy Algorithms: Fractional Knapsack, Job sequencing with Deadlines, Kruskal’s Algorithm, Prims Algorithm, Dijkstra’s Algorithm and their Analysis
+4.3. Huffman Coding: Purpose of Huffman Coding, Prefix Codes, Huffman Coding Algorithm and its Analysis
+-->
+UNIT 4: GREEDY ALGORITHMS (6 Hrs)
+What is a Greedy Algorithm?
+
+A greedy algorithm solves a problem by:
+👉 Choosing the best option at each step, hoping this leads to the best final solution.
+
+📌 It never goes back to change decisions.
+
+4.1 Optimization Problems
+What is an Optimization Problem?
+
+An optimization problem is a problem where we need to:
+✔ Maximize profit / value
+✔ Minimize cost / time / distance
+
+Optimal Solution
+
+The best possible solution among all valid solutions.
+
+Introduction to Greedy Algorithms
+
+Greedy algorithms:
+
+Work step by step
+
+Make locally optimal choice
+
+Fast and easy to implement
+
+📌 Not all problems can be solved using greedy method.
+
+Elements of Greedy Strategy
+
+A greedy algorithm has these parts:
+
+Candidate Set – all possible choices
+
+Selection Function – chooses best candidate
+
+Feasibility Function – checks if choice is allowed
+
+Objective Function – measures quality (profit, cost)
+
+Solution Function – stops when solution is complete
+
+4.2 Greedy Algorithms
+1️⃣ Fractional Knapsack
+Problem
+
+You have:
+
+Items with weight and profit
+
+Knapsack with fixed capacity
+
+You can take fraction of an item
+
+Idea
+
+Choose items with highest profit/weight ratio first.
+
+Algorithm
+FractionalKnapsack(items, W)
+Sort items by profit/weight (descending)
+
+for each item
+    if item.weight ≤ W
+        take whole item
+        W = W - item.weight
+    else
+        take fraction of item
+        break
+
+Time Complexity
+
+👉 O(n log n) (due to sorting)
+
+Space Complexity
+
+👉 O(1)
+
+Important Note
+
+✔ Greedy works here
+❌ Does NOT work for 0/1 Knapsack
+
+2️⃣ Job Sequencing with Deadlines
+Problem
+
+Jobs have profit and deadline
+
+Each job takes 1 unit time
+
+Only one job can be done at a time
+
+Maximize total profit
+
+Idea
+
+Sort jobs by profit (descending)
+
+Schedule job as late as possible before deadline
+
+Algorithm (Idea)
+Sort jobs by profit
+for each job
+    for time = deadline to 1
+        if slot is free
+            schedule job
+            break
+
+Time Complexity
+
+👉 O(n²)
+
+Space Complexity
+
+👉 O(n)
+
+3️⃣ Kruskal’s Algorithm
+Problem
+
+Find Minimum Spanning Tree (MST).
+
+📌 MST connects all vertices with:
+✔ Minimum total weight
+✔ No cycle
+
+Idea
+
+Sort edges by weight
+
+Add smallest edge
+
+Avoid cycle
+
+Algorithm
+Sort all edges by weight
+for each edge
+    if adding edge does not form cycle
+        add edge to MST
+
+Time Complexity
+
+👉 O(E log E)
+
+Space Complexity
+
+👉 O(V)
+
+4️⃣ Prim’s Algorithm
+Problem
+
+Find Minimum Spanning Tree.
+
+Idea
+
+Start from any node
+
+Always choose minimum weight edge that connects tree to new vertex
+
+Algorithm (Simple Idea)
+Start with any vertex
+while all vertices not included
+    choose smallest edge connecting tree to outside vertex
+
+Time Complexity
+Implementation	Time
+Adjacency Matrix	O(V²)
+Priority Queue	O(E log V)
+Space Complexity
+
+👉 O(V)
+
+Kruskal vs Prim
+Kruskal	Prim
+Edge based	Vertex based
+Best for sparse graph	Best for dense graph
+5️⃣ Dijkstra’s Algorithm
+Problem
+
+Find shortest path from source to all vertices.
+
+📌 Works only with non-negative weights.
+
+Idea
+
+Start from source
+
+Always pick closest unvisited vertex
+
+Relax edges
+
+Algorithm (Idea)
+Initialize distances from source
+repeat
+    select vertex with minimum distance
+    update distances of its neighbors
+until all vertices visited
+
+Time Complexity
+Implementation	Time
+Simple array	O(V²)
+Min Heap	O(E log V)
+Space Complexity
+
+👉 O(V)
+
+4.3 Huffman Coding
+Purpose of Huffman Coding
+
+Used for:
+✔ Data compression
+✔ Reducing file size
+✔ Efficient storage and transmission
+
+📌 Used in ZIP, JPEG, MP3
+
+Prefix Codes
+What is Prefix Code?
+
+No code is prefix of another code
+
+Avoids confusion during decoding
+
+📌 Example:
+A = 0
+B = 10
+C = 11
+
+Huffman Coding Algorithm
+Idea
+
+Frequent characters → shorter codes
+
+Less frequent → longer codes
+
+Steps
+
+Create leaf nodes for each character
+
+Insert into priority queue
+
+Remove two smallest frequency nodes
+
+Merge them
+
+Repeat until one node remains
+
+Time Complexity
+
+👉 O(n log n)
+
+Space Complexity
+
+👉 O(n)
+
+📌 IMPORTANT TABLE (REVISION)
+Algorithm	Purpose	Time
+Fractional Knapsack	Max profit	n log n
+Job Sequencing	Max profit	n²
+Kruskal	MST	E log E
+Prim	MST	V² / E log V
+Dijkstra	Shortest Path	V² / E log V
+Huffman	Compression	n log n
+EXAM TIPS
+
+✔ Write greedy choice clearly
+✔ Mention where greedy works / fails
+✔ Draw small diagrams for MST
+✔ Huffman tree diagram = high marks
+---------------------------------------------------------------------------------------------------------------
+Unit 5. Dynamic Programming8 Hrs.
+5.1. Greedy Algorithms vs Dynamic Programming, Recursion vs Dynamic Programming, Elements of DP Strategy
+5.2. DP Algorithms: Matrix Chain Multiplication, String Editing, Zero-One Knapsack Problem, Floyd Warshwall Algorithm, Travelling Salesman Problem and their Analysis.
+5.3. Memoization Strategy, Dynamic Programming vs Memoization
+--->
+UNIT 5: DYNAMIC PROGRAMMING (8 Hrs)
+What is Dynamic Programming (DP)?
+
+Dynamic Programming is a method to solve problems by:
+✔ Breaking a big problem into small overlapping sub-problems
+✔ Solving each sub-problem only once
+✔ Storing the result and reusing it
+
+📌 DP avoids repeated work → faster algorithms
+
+5.1 Greedy vs Dynamic Programming
+Greedy Algorithm	Dynamic Programming
+Makes local best choice	Finds global best solution
+Faster, simpler	Slower but more accurate
+No backtracking	Considers all possibilities
+May fail	Always correct (if applied properly)
+
+📌 Example:
+Greedy fails in 0/1 Knapsack, DP works.
+
+Recursion vs Dynamic Programming
+Recursion	Dynamic Programming
+Repeated calculations	Stores results
+Slow	Fast
+High time complexity	Optimized
+No memory table	Uses DP table
+
+📌 DP = Recursion + Memory
+
+Elements of DP Strategy
+
+Optimal Substructure
+→ Optimal solution depends on optimal solutions of sub-problems
+
+Overlapping Sub-problems
+→ Same sub-problem solved many times
+
+DP Table (Storage)
+→ Store results of sub-problems
+
+Bottom-Up / Top-Down approach
+
+5.2 Dynamic Programming Algorithms
+1️⃣ Matrix Chain Multiplication (MCM)
+Problem
+
+Given matrices, find best order of multiplication with minimum cost.
+
+📌 Multiplication order matters, result does not.
+
+Idea
+
+Try all possible splits
+
+Choose minimum cost
+
+DP Formula
+M[i][j] = min ( M[i][k] + M[k+1][j] + p[i−1]p[k]p[j] )
+
+Time Complexity
+
+👉 O(n³)
+
+Space Complexity
+
+👉 O(n²)
+
+2️⃣ String Editing (Edit Distance)
+Problem
+
+Convert one string into another using:
+✔ Insert
+✔ Delete
+✔ Replace
+
+📌 Each operation has cost = 1
+
+Example
+
+Convert “CAT” → “CUT”
+Replace A with U → cost = 1
+
+DP Idea
+
+Build table using smaller substrings
+
+Compare characters
+
+Time Complexity
+
+👉 O(m × n)
+
+Space Complexity
+
+👉 O(m × n)
+
+3️⃣ Zero-One Knapsack Problem
+Problem
+
+Items have weight and value
+
+Knapsack has fixed capacity
+
+Either take whole item or nothing
+
+📌 Fractions NOT allowed
+
+DP Idea
+DP[i][w] = max value using first i items and capacity w
+
+Time Complexity
+
+👉 O(n × W)
+
+Space Complexity
+
+👉 O(n × W)
+
+Why DP?
+
+✔ Greedy fails
+✔ DP gives optimal solution
+
+4️⃣ Floyd-Warshall Algorithm
+Problem
+
+Find shortest paths between all pairs of vertices.
+
+📌 Can handle negative edges, but no negative cycles
+
+DP Idea
+
+Gradually allow intermediate vertices
+
+Update distances
+
+Formula
+dist[i][j] = min(dist[i][j], dist[i][k] + dist[k][j])
+
+Time Complexity
+
+👉 O(V³)
+
+Space Complexity
+
+👉 O(V²)
+
+5️⃣ Travelling Salesman Problem (TSP)
+Problem
+
+Visit every city once
+
+Return to starting city
+
+Minimize total cost
+
+📌 NP-Hard problem
+
+DP Idea
+
+Use bitmasking
+
+Store visited cities
+
+Time Complexity
+
+👉 O(n² × 2ⁿ)
+
+Space Complexity
+
+👉 O(n × 2ⁿ)
+
+5.3 Memoization Strategy
+What is Memoization?
+
+A top-down DP approach
+
+Store results of recursive calls
+
+Avoid recomputation
+
+Example
+
+Recursive Fibonacci with memoization:
+
+Store fib(n)
+
+Use stored value next time
+
+Dynamic Programming vs Memoization
+Dynamic Programming	Memoization
+Bottom-up	Top-down
+Iterative	Recursive
+Table filled in order	Table filled on demand
+No recursion	Uses recursion
+
+📌 Both reduce time complexity
+
+📌 IMPORTANT SUMMARY TABLE
+Algorithm	Time Complexity	Space
+MCM	O(n³)	O(n²)
+Edit Distance	O(mn)	O(mn)
+0/1 Knapsack	O(nW)	O(nW)
+Floyd-Warshall	O(V³)	O(V²)
+TSP (DP)	O(n²2ⁿ)	O(n2ⁿ)
+EXAM TIPS
+
+✔ Always write DP table meaning
+✔ Compare Greedy vs DP
+✔ Explain why DP is needed
+✔ Write recurrence relations
+✔ Diagrams/tables = extra marks
+---------------------------------------------------------------------------------------------------------------
+Unit 6. Backtracking5 Hrs.
+6.1. Concept of Backtracking, Recursion vs Backtracking
+6.2. Backtracking Algorithms: Subset-sum Problem, Zero-one Knapsack Problem, N-queen Problem and their Analysis.
+-->
+UNIT 6: BACKTRACKING (5 Hrs)
+What is Backtracking?
+
+Backtracking is a technique where:
+👉 We try one possible solution
+👉 If it does not work, we go back (backtrack) and try another option
+
+📌 It is like trial and error, but done systematically.
+
+Real-life Example
+
+Finding a way in a maze:
+
+Go forward
+
+If road is blocked → go back and choose another path
+
+6.1 Concept of Backtracking
+
+Backtracking:
+
+Builds solution step by step
+
+Checks constraints at each step
+
+Stops early if solution is not possible
+
+📌 It avoids unnecessary work by pruning bad choices.
+
+General Backtracking Steps
+
+Choose a candidate
+
+Check if it is safe
+
+Continue forward
+
+If fails → undo choice (backtrack)
+
+Recursion vs Backtracking
+Recursion	Backtracking
+Function calls itself	Uses recursion + undo
+Solves all cases	Stops invalid paths
+No checking of constraints	Checks constraints
+Simple	More logical control
+
+📌 Backtracking uses recursion, but recursion alone is not backtracking.
+
+6.2 Backtracking Algorithms
+1️⃣ Subset-Sum Problem
+Problem
+
+Given:
+
+A set of numbers
+
+A target sum
+
+Find whether any subset adds up to the given sum.
+
+📌 Example:
+Set = {3, 4, 5}
+Target = 9
+Solution = {4, 5}
+
+Idea
+
+Include or exclude each element
+
+Stop if sum becomes too large
+
+Algorithm Idea
+SubsetSum(i, currentSum)
+if currentSum == target
+    print solution
+if i == n or currentSum > target
+    return
+
+include A[i]
+SubsetSum(i+1, currentSum + A[i])
+
+exclude A[i]
+SubsetSum(i+1, currentSum)
+
+Time Complexity
+
+👉 O(2ⁿ) (worst case)
+
+Space Complexity
+
+👉 O(n) (recursion stack)
+
+2️⃣ Zero-One Knapsack (Backtracking Approach)
+Problem
+
+Items have weight and profit
+
+Capacity is limited
+
+Either take item or leave it
+
+📌 Different from DP version
+
+Idea
+
+Try all combinations
+
+Prune paths when weight exceeds capacity
+
+Algorithm Idea
+Knapsack(i, profit, weight)
+if weight ≤ capacity
+    update maxProfit
+if i == n
+    return
+
+include item i
+Knapsack(i+1, profit + p[i], weight + w[i])
+
+exclude item i
+Knapsack(i+1, profit, weight)
+
+Time Complexity
+
+👉 O(2ⁿ)
+
+Space Complexity
+
+👉 O(n)
+
+Note
+
+✔ Backtracking is slower
+✔ DP is better for large input
+
+3️⃣ N-Queen Problem
+Problem
+
+Place N queens on an N×N chessboard such that:
+✔ No two queens attack each other
+
+📌 Queens attack horizontally, vertically, diagonally.
+
+Idea
+
+Place one queen in each row
+
+Check column & diagonals
+
+Backtrack if unsafe
+
+Algorithm Idea
+NQueen(row)
+if row == N
+    print solution
+    return
+
+for col = 1 to N
+    if isSafe(row, col)
+        place queen
+        NQueen(row + 1)
+        remove queen
+
+Time Complexity
+
+👉 O(N!) (worst case)
+
+Space Complexity
+
+👉 O(N)
+
+📌 COMPARISON TABLE
+Problem	Technique	Time
+Subset Sum	Backtracking	2ⁿ
+0/1 Knapsack	Backtracking	2ⁿ
+N-Queen	Backtracking	N!
+IMPORTANT TERMS (WRITE IN EXAM)
+
+✔ State Space Tree – All possible solutions
+✔ Pruning – Cutting invalid branches
+✔ Feasible Solution – Valid solution
+✔ Partial Solution – Incomplete solution
+
+EXAM TIPS
+
+✔ Define backtracking clearly
+✔ Mention pruning
+✔ Draw state space tree (small)
+✔ Compare with DP
+✔ Write time complexity
+
+---------------------------------------------------------------------------------------------------------------
+Unit 7. Number Theoretic Algorithms5 Hrs.
+7.1. Number Theoretic Notations, Euclid’s and Extended Euclid’s Algorithms and their Analysis.
+7.2. Solving Modular Linear Equations, Chinese Remainder Theorem, Primility Testing: MillerRabin Randomized Primility Test and their Analysis
+---->
+UNIT 7: NUMBER THEORETIC ALGORITHMS (5 Hrs)
+Why Number Theoretic Algorithms?
+
+These algorithms are used in:
+✔ Cryptography (RSA, security)
+✔ Computer security
+✔ Modular arithmetic problems
+
+7.1 Number Theoretic Notations
+1️⃣ Divisibility
+
+a | b → a divides b
+
+a ∤ b → a does not divide b
+
+2️⃣ Modulo Operation
+
+a mod n = remainder when a is divided by n
+
+📌 Example:
+17 mod 5 = 2
+
+3️⃣ Congruence
+a ≡ b (mod n)
+
+
+Means a and b give same remainder when divided by n.
+
+📌 Example:
+17 ≡ 2 (mod 5)
+
+4️⃣ GCD (Greatest Common Divisor)
+
+Largest number dividing both numbers.
+
+📌 Example:
+GCD(24, 36) = 12
+
+5️⃣ Prime Number
+
+A number greater than 1 with only two factors: 1 and itself.
+
+Euclid’s Algorithm
+Purpose
+
+To find GCD of two numbers efficiently.
+
+Idea
+
+GCD(a, b) = GCD(b, a mod b)
+
+Algorithm
+Euclid(a, b)
+while b ≠ 0
+    r = a mod b
+    a = b
+    b = r
+return a
+
+Time Complexity
+
+👉 O(log n)
+
+Space Complexity
+
+👉 O(1)
+
+Extended Euclid’s Algorithm
+Purpose
+
+Finds:
+✔ GCD(a, b)
+✔ Values of x and y such that:
+
+ax + by = gcd(a, b)
+
+
+📌 Very important in cryptography.
+
+Algorithm Idea
+
+Same as Euclid
+
+Also keeps track of x and y
+
+Time Complexity
+
+👉 O(log n)
+
+Space Complexity
+
+👉 O(log n) (recursive)
+
+7.2 Solving Modular Linear Equations
+Problem
+
+Solve equation of the form:
+
+ax ≡ b (mod n)
+
+Condition for Solution
+
+Solution exists iff:
+
+gcd(a, n) | b
+
+Solution Method
+
+Compute g = gcd(a, n)
+
+Divide equation by g
+
+Use Extended Euclid to find inverse
+
+Number of Solutions
+
+👉 Exactly g solutions
+
+Chinese Remainder Theorem (CRT)
+Problem
+
+Solve system of congruences:
+
+x ≡ a₁ (mod n₁)
+x ≡ a₂ (mod n₂)
+...
+
+Condition
+
+All moduli must be pairwise coprime.
+
+Idea
+
+Combine smaller equations into one
+
+Get a unique solution modulo product of moduli
+
+Example
+x ≡ 1 (mod 2)
+x ≡ 2 (mod 3)
+
+
+Solution:
+x ≡ 5 (mod 6)
+
+Time Complexity
+
+👉 O(n log M)
+
+Primality Testing
+What is Primality Testing?
+
+Check whether a number is prime or composite.
+
+Miller–Rabin Randomized Primality Test
+Purpose
+
+Efficient test to check primality of very large numbers.
+
+📌 Used in cryptography.
+
+Idea (Simple)
+
+Write n − 1 as 2^k × m
+
+Pick random number a
+
+Check modular exponentiation
+
+Repeat test several times
+
+Why Randomized?
+
+Uses random values
+
+Probability of error is very small
+
+Result
+
+“Probably Prime”
+
+“Composite”
+
+Time Complexity
+
+👉 O(k log³ n)
+(where k = number of tests)
+
+Advantages
+
+✔ Very fast
+✔ Suitable for large numbers
+
+📌 IMPORTANT COMPARISON TABLE
+Algorithm	Purpose	Time
+Euclid	GCD	log n
+Extended Euclid	GCD + inverse	log n
+CRT	Solve congruences	n log n
+Miller-Rabin	Primality test	log³ n
+IMPORTANT EXAM POINTS
+
+✔ Write definitions clearly
+✔ Use examples in modular equations
+✔ Mention “pairwise coprime” in CRT
+✔ Miller-Rabin is probabilistic
+✔ Write time complexity
+---------------------------------------------------------------------------------------------------------------
+Unit 8. NP Completeness5 Hrs.
+8.1. Tractable and Intractable Problems, Concept of Polynomial Time and Super Polynomial Time Complexity
+8.2. Complexity Classes: P, NP, NP-Hard and NP-Complete
+8.3. NP Complete Problems, NP Completeness and Reducibility, Cooks Theorem, Proofs of NP Completeness (CNF SAT, Vertex Cover and Subset Sum)
+8.4. Approximation Algorithms: Concept, Vertex Cover Problem, Subset Sum Problem
+--->
+UNIT 8: NP-COMPLETENESS (5 Hrs)
+Why NP-Completeness is Important
+
+This unit answers one big question:
+
+👉 Which problems can be solved efficiently and which cannot (so far)?
+
+Used in:
+✔ Algorithm design
+✔ Complexity theory
+✔ Real-world optimization problems
+
+8.1 Tractable and Intractable Problems
+Tractable Problems
+
+Problems that can be solved efficiently.
+
+📌 Solved in polynomial time
+Examples:
+
+Sorting
+
+Searching
+
+Shortest path (Dijkstra)
+
+Intractable Problems
+
+Problems that cannot be solved efficiently for large input.
+
+📌 Take very long time as input grows
+Examples:
+
+Travelling Salesman Problem
+
+Subset Sum
+
+SAT
+
+Polynomial Time Complexity
+
+An algorithm runs in polynomial time if:
+
+Time = O(n^k)   where k is constant
+
+
+Examples:
+
+O(n)
+
+O(n²)
+
+O(n³)
+
+📌 Considered efficient and practical
+
+Super-Polynomial Time Complexity
+
+Time grows faster than any polynomial.
+
+Examples:
+
+O(2ⁿ)
+
+O(n!)
+
+O(nⁿ)
+
+📌 Becomes impossible for large input
+
+8.2 Complexity Classes
+Class P
+Definition
+
+Problems that can be:
+✔ Solved in polynomial time
+✔ By a deterministic algorithm
+
+📌 Example:
+
+Sorting
+
+Binary Search
+
+Minimum Spanning Tree
+
+Class NP
+Definition
+
+Problems for which:
+✔ Given a solution, it can be verified in polynomial time
+
+📌 Not necessarily solved fast, but checked fast
+
+Example
+
+SAT
+
+Hamiltonian Path
+
+Subset Sum
+
+Class NP-Hard
+Definition
+
+Problems that are:
+✔ At least as hard as NP problems
+✔ Not necessarily in NP
+
+📌 No known polynomial-time solution
+
+Example
+
+Halting Problem
+
+Optimization versions of NP-Complete problems
+
+Class NP-Complete
+Definition
+
+Problems that are:
+✔ In NP
+✔ NP-Hard
+
+📌 Hardest problems in NP
+
+Important Note
+
+If any NP-Complete problem is solved in polynomial time:
+👉 All NP problems can be solved in polynomial time
+
+Relationship Diagram (Write in Exam)
+P ⊆ NP ⊆ NP-Hard
+     ∩
+  NP-Complete
+
+8.3 NP-Complete Problems
+NP-Completeness
+
+A problem is NP-Complete if:
+
+It is in NP
+
+Every NP problem can be reduced to it in polynomial time
+
+Reducibility
+What is Reduction?
+
+Transforming problem A into problem B in polynomial time.
+
+📌 If B is easy, A is also easy.
+
+Cook’s Theorem
+Statement
+
+✔ Boolean Satisfiability Problem (SAT) is NP-Complete
+
+📌 First NP-Complete problem
+
+Importance
+
+All other NP-Complete problems are proven using SAT.
+
+Proof of NP-Completeness (Steps)
+
+To prove a problem X is NP-Complete:
+
+Show X ∈ NP
+
+Choose known NP-Complete problem Y
+
+Reduce Y → X in polynomial time
+
+Examples of NP-Complete Problems
+1️⃣ CNF-SAT
+
+Boolean formula in Conjunctive Normal Form
+
+Question: Is there a satisfying assignment?
+
+✔ In NP
+✔ NP-Complete (by Cook’s Theorem)
+
+2️⃣ Vertex Cover
+Problem
+
+Given graph G and integer k, is there a set of ≤ k vertices that covers all edges?
+
+✔ In NP
+✔ NP-Complete
+
+3️⃣ Subset Sum
+Problem
+
+Given set of numbers and sum S, does any subset add to S?
+
+✔ In NP
+✔ NP-Complete
+
+8.4 Approximation Algorithms
+What is an Approximation Algorithm?
+
+Used when:
+✔ Problem is NP-Complete
+✔ Exact solution is too slow
+
+👉 Gives near-optimal solution in polynomial time
+
+Approximation for Vertex Cover
+Idea
+
+Pick an edge
+
+Add both vertices to cover
+
+Remove all incident edges
+
+Repeat
+
+Result
+
+At most 2 times optimal solution
+
+📌 2-approximation algorithm
+
+Approximation for Subset Sum
+Idea
+
+Use greedy + trimming
+
+Get sum close to target
+
+📌 Not exact, but fast
+
+IMPORTANT SUMMARY TABLE
+Term	Meaning
+P	Solvable in polynomial time
+NP	Verifiable in polynomial time
+NP-Hard	As hard as NP
+NP-Complete	NP + NP-Hard
+Reduction	Transform problem
+Approximation	Near-optimal solution
+EXAM TIPS
+
+✔ Write clear definitions
+✔ Draw class relationship diagram
+✔ Mention Cook’s Theorem
+✔ Explain reduction steps
+✔ Approximation = polynomial time
+------------------------------------------------------------------------------------------------------------------
+
+1. What is an Algorithm? Explain its properties.
+
+Answer:
+An algorithm is a finite set of well-defined steps used to solve a problem.
+
+Properties:
+
+Input – Takes zero or more inputs
+
+Output – Produces at least one output
+
+Definiteness – Steps are clear and unambiguous
+
+Finiteness – Terminates after finite steps
+
+Effectiveness – Steps are basic and executable
+
+Correctness – Produces correct result
+
+2. What is Time Complexity and Space Complexity?
+
+Answer:
+
+Time Complexity: Measures how execution time grows with input size n.
+
+Space Complexity: Measures memory used by an algorithm.
+
+📌 Expressed using asymptotic notations.
+
+3. Explain Big-O, Big-Ω and Big-Θ notations.
+
+Answer:
+
+Big-O (O): Upper bound (worst case)
+
+Big-Ω (Ω): Lower bound (best case)
+
+Big-Θ (Θ): Tight bound (both)
+
+Example:
+f(n) = 3n + 5 → O(n), Ω(n), Θ(n)
+
+4. What is Divide and Conquer? Give examples.
+
+Answer:
+Divide and Conquer solves a problem by:
+
+Dividing it into smaller subproblems
+
+Solving them recursively
+
+Combining the results
+
+Examples:
+Binary Search, Merge Sort, Quick Sort
+
+5. Explain Binary Search and its complexity.
+
+Answer:
+Binary Search finds an element in a sorted array by repeatedly dividing search space into half.
+
+Best Case: O(1)
+
+Worst / Average Case: O(log n)
+
+Space: O(1) (iterative)
+
+6. Compare Merge Sort and Quick Sort.
+Feature	Merge Sort	Quick Sort
+Time	n log n	n log n (avg)
+Worst	n log n	n²
+Space	O(n)	O(log n)
+Stability	Stable	Not stable
+7. What is a Greedy Algorithm? Explain its elements.
+
+Answer:
+A greedy algorithm chooses the best option at each step.
+
+Elements:
+
+Candidate set
+
+Selection function
+
+Feasibility function
+
+Objective function
+
+Solution function
+
+8. Why does Greedy fail for 0/1 Knapsack?
+
+Answer:
+Greedy makes local decisions, but 0/1 Knapsack requires global optimization.
+Greedy may miss the optimal combination → DP is needed.
+
+9. Explain Kruskal’s Algorithm.
+
+Answer:
+Kruskal’s algorithm finds Minimum Spanning Tree by:
+
+Sorting edges by weight
+
+Adding smallest edge without forming cycle
+
+Time Complexity: O(E log E)
+
+10. What is Dynamic Programming (DP)?
+
+Answer:
+Dynamic Programming solves problems by:
+
+Breaking into overlapping subproblems
+
+Solving each once
+
+Storing results
+
+📌 DP = Recursion + Memory
+
+11. Compare Greedy and Dynamic Programming.
+Greedy	DP
+Local optimal	Global optimal
+Faster	Slower
+Simple	Complex
+May fail	Always correct
+12. Explain Matrix Chain Multiplication.
+
+Answer:
+Finds the best order of multiplying matrices to minimize cost.
+
+Time: O(n³)
+
+Space: O(n²)
+
+13. What is Floyd-Warshall Algorithm?
+
+Answer:
+Finds shortest paths between all pairs of vertices.
+
+Allows negative edges
+
+No negative cycles
+
+Time: O(V³)
+
+14. What is Backtracking?
+
+Answer:
+Backtracking tries possible solutions step by step and goes back when a choice fails.
+
+📌 Used for:
+
+N-Queen
+
+Subset Sum
+
+0/1 Knapsack
+
+15. Explain N-Queen Problem.
+
+Answer:
+Place N queens on an N×N board so that no two queens attack each other.
+
+Technique: Backtracking
+
+Time: O(N!)
+
+16. What is NP-Completeness?
+
+Answer:
+A problem is NP-Complete if:
+
+It is in NP
+
+It is NP-Hard
+
+📌 Hardest problems in NP.
+
+17. Define P, NP, NP-Hard, NP-Complete.
+Class	Meaning
+P	Solvable in polynomial time
+NP	Verifiable in polynomial time
+NP-Hard	At least as hard as NP
+NP-Complete	NP + NP-Hard
+18. What is Cook’s Theorem?
+
+Answer:
+SAT is NP-Complete.
+It was the first NP-Complete problem.
+
+19. What is Polynomial-time Reduction?
+
+Answer:
+Transforming problem A to problem B in polynomial time.
+
+📌 Used to prove NP-Completeness.
+
+20. What is an Approximation Algorithm?
+
+Answer:
+An algorithm that gives near-optimal solution in polynomial time for NP-Complete problems.
+
+Example:
+
+Vertex Cover (2-approximation)
+
+21. What is Huffman Coding?
+
+Answer:
+A greedy algorithm used for data compression.
+
+Uses prefix codes
+
+Frequent characters get shorter codes
+
+Time: O(n log n)
+
+22. Explain Euclid’s Algorithm.
+
+Answer:
+Finds GCD using:
+
+gcd(a, b) = gcd(b, a mod b)
+
+
+Time: O(log n)
+
+23. What is Miller-Rabin Test?
+
+Answer:
+A randomized algorithm for primality testing.
+
+Fast
+
+Used in cryptography
+
+24. What is Order Statistics?
+
+Answer:
+Finding k-th smallest or largest element.
+
+Examples:
+
+Median
+
+Minimum / Maximum
+
+25. Difference between Backtracking and DP.
+Backtracking	DP
+Try all possibilities	Optimized
+Exponential	Polynomial
+No memory	Uses table
+✅ FINAL EXAM TIP
+
+✔ Learn definitions + comparisons
+✔ Draw diagrams where possible
+✔ Write time & space complexity
+✔ Use examples
+---------------------------------------------------------------------------------------------------------------
+Laboratory Works:
+This course can be learnt in effective way only if we give focus is given in practical aspects of algorithms and techniques discussed in class. Therefore student should be able to implement the algorithms and analyze their behavior.
+
+For the laboratory work, students should implement the following algorithms in C/ C++ and perform their analysis for time and space complexity.
+
+Basic iterative algorithms GCD algorithm, Fibonacci Sequences, Sequential and Binary Search.
+Basic iterative sorting algorithms: Bubble Sort, selection Sort, Insertion Sort.
+Binary Search with Divide and conquer approach.
+Merge Sort, Heap sort, Quick Sort, Randomized Quick Sort.
+Selection Problem with divide and Conquer approach
+Fractional Knapsack Problem, Job sequencing with deadline, Kruskal’s algorithm, Prims algorithm, Dijkstra’s Algorithm
+Implement the dynamic programming algorithms.
+Algorithms using Backtracking approach.
+Implement approximationAlgorithm.
